@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import WelcomePage from '../WelcomePage/WelcomePage';
+import BeginInitiative from '../BeginInitiative/BeginInitiative';
 
 function App() {
   return (
