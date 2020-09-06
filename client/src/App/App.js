@@ -9,6 +9,9 @@ function App() {
         <Route 
           exact path = "/"
           render={() => <WelcomePage />} />
+        <Route 
+          exact path = "/proposal"
+          render={() => <BeginInitiative />} />  
     </div>
   );
 }
