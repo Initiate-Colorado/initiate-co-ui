@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "jest": {
-    "testEnvironment": "node",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
+    "setupFilesAfterEnv": [
+      "jest-extended"
     ]
   },
   "scripts": {
@@ -22,13 +21,7 @@
     "start:prod": "npm run build:prod && npm run start:server",
     "build:prod": "babel src -s -D -d build",
     "start:server": "node build/index.js",
-    "test": "jest --verbose ./tests"
-   
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "jest-extended"
-    ]
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
