@@ -1,10 +1,13 @@
 import React from 'react';
 import './BeginInitiative.css';
 import { NavLink } from 'react-router-dom';
+import StepTracker from '../StepTracker/component'
+import { connect } from 'react-redux';
 
-const BeginInitiative = () => {
+const BeginInitiative = ({handleIncrementClick}) => {
     return (
         <section className = "begin-initiative">
+            <StepTracker />
             <h1>Congratulations on taking the first step towards proposing a ballot initiative!</h1>
             <p>Click the 'GET STARTED' button below in order to complete the following steps:</p>
             <ol>
@@ -25,7 +28,9 @@ const BeginInitiative = () => {
             </ol>
             <NavLink to = {"/Proposal/ProposalSubmission"}>
                 <button
-                    data-testid="research-button">
+                    data-testid="research-button"
+                    onClick={handleIncrementClick}
+                >
                         GET STARTED
                 </button>
             </NavLink>         
@@ -33,4 +38,18 @@ const BeginInitiative = () => {
     )
 }
 
-export default BeginInitiative;
+const mapStateToProps = state => {
+    return {
+      ProposalStep: state
+    };
+  };
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+      handleIncrementClick: () => dispatch({ type: 'INCREMENT' }),
+      handleDecrementClick: () => dispatch({ type: 'DECREMENT' })
+    }
+  };
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(BeginInitiative);
