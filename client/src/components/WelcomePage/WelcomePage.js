@@ -23,7 +23,7 @@ const WelcomePage = () => {
                 <p>
                     Learn more about initiatives and show your support!
                 </p>    
-                <NavLink to = {"/Research"}>
+                <NavLink to = {"/research"}>
                     <button
                         data-testid="research-button">
                             GET STARTED
