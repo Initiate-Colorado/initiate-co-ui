@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "scripts": {
     "setup": "npm run setup:install && npm run setup:db",
     "setup:install": "npm install",
@@ -16,7 +22,8 @@
     "start:prod": "npm run build:prod && npm run start:server",
     "build:prod": "babel src -s -D -d build",
     "start:server": "node build/index.js",
-    "test": "jest"
+    "test": "jest --verbose ./tests"
+   
   },
   "jest": {
     "setupFilesAfterEnv": [
