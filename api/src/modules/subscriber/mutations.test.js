@@ -5,6 +5,7 @@ import schema from '../../setup/schema'
 import models from '../../setup/models'
 import bcrypt from 'bcrypt';
 import db from '../../setup/database';
+
 describe('user mutations', () => {
   let server;
   beforeAll(() => {
@@ -23,14 +24,14 @@ describe('user mutations', () => {
   afterAll(() => {
     db.close()
   })
-  it('can create new user', async () => {
+  it('can create new subscriber', async () => {
     const response = await request(server)
       .post('/')
       .send({ query: 'mutation { userSignup(name: "Hermione Granger", email: "granger@hogwarts.com", password: "crookshanks"){id}}' })
       .expect(200)
     expect(response.body.data.userSignup.id).toBeNumber()
   })
-  it('can remove a user', async () => {
+  it('can remove a subscriber', async () => {
     const response = await request(server)
       .post('/')
       .send({ query: 'mutation { userRemove (id: 1) {id}}' })
