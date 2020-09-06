@@ -5,17 +5,25 @@ import { NavLink } from 'react-router-dom';
 const WelcomePage = () => {
     return (
         <section className = "option-area">
-            <h1>What do you plan on learning today?</h1>
+            <h1>What would you like to do?</h1>
+            <h1>Propose a Ballot Initiative</h1>
+            <p>
+
+            </p>
                 <NavLink to = {"/HouseSelection"}>
                     <button
                         data-testid="house-button">
-                            Choose by house
+                            GET STARTED
                     </button>
                 </NavLink>
+            <h1>Research Initiatives</h1>    
+            <p>
+                
+            </p>    
                 <NavLink to = {"/CharacterSelection"}>
                     <button
                         data-testid="character-button">
-                            Choose by character
+                            GET STARTED
                     </button>
                 </NavLink>
         </section>
