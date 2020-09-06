@@ -6,6 +6,7 @@ import BeginInitiative from '../BeginInitiative/BeginInitiative';
 import Nav from '../Nav/Nav';
 import Research from '../Research/Research';
 
+
 function App() {
   return (
     <div className="App">
