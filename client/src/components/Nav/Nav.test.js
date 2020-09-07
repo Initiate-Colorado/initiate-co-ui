@@ -7,8 +7,6 @@ import '@testing-library/jest-dom'
 
 describe('Nav', () => {
 
-
-    //Need to wrap around provider with store 
   it('Should render the Nav component', () => {
     const { getByText } = render(<MemoryRouter><Nav /></MemoryRouter>);
     const optionText = getByText('Nav');
