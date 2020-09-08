@@ -1,9 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Nav from './Nav';
+import { MemoryRouter } from 'react-router-dom';
+import '@testing-library/jest-dom'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<Nav />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+describe('Nav', () => {
+
+  it('Should render the Nav component', () => {
+    const { getByText } = render(<MemoryRouter><Nav /></MemoryRouter>);
+    const optionText = getByText('Nav');
+    expect(optionText).toBeInTheDocument();
+  });  
+})
