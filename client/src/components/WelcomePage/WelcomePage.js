@@ -6,12 +6,13 @@ const WelcomePage = () => {
     return (
         <section className = "option-area">
             <h1>What would you like to do?</h1>
+            <section className="cards">
             <section className = "proposal-start">
                 <h1>Propose a Ballot Initiative</h1>
                 <p>
                     Be guided through the process of proposing a ballot initiative!
                 </p>
-                <NavLink to = {"/Proposal"}>
+                <NavLink to = {"/proposal"}>
                     <button
                         data-testid="proposal-button">
                             GET STARTED
@@ -30,6 +31,7 @@ const WelcomePage = () => {
                     </button>
                 </NavLink>
             </section>     
+            </section>    
         </section>
     )
 }

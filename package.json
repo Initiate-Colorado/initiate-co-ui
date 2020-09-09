@@ -3,14 +3,15 @@
     "version": "1.0.0",
     "scripts": {
         "build": "cd client ",
-        "hit-it": "cd api && node server.js && cd .. && cd client && npm start",
         "client": "cd client && npm start",
         "server": "nodemon server.js",
         "dev": "concurrently --kill-others-on-fail \"npm server\" \"npm client\""
     },
     "dependencies": {
+        "axios": "^0.20.0",
         "body-parser": "^1.19.0",
         "express": "^4.17.1",
+        "gql-query-builder": "^3.5.0",
         "graphql": "^15.3.0"
     },
     "devDependencies": {

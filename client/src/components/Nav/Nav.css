@@ -1,11 +1,26 @@
 .Nav {
+  height: 10vh;
+  width: 100vw;
+  background-color: whitesmoke;
+}
+
+.Nav-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
+}
+
+.Nav-p {
+  width: fit-content;
+}
+
+
+.step-tracker {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 10vh;
 }
 
-p {
-  font-weight: bolder;
-}

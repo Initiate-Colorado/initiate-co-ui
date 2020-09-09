@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const StepTracker = ({ ProposalStep, handleIncrementClick, handleDecrementClick }) => (
-  <div>
+  <div className="step-tracker">
     <h1>Proposal Step Tracker {ProposalStep}</h1>
     <button onClick={handleDecrementClick}>Decrement</button>
     <button onClick={handleIncrementClick}>Increment</button>
