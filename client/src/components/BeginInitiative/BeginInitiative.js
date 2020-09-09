@@ -26,7 +26,7 @@ const BeginInitiative = ({handleIncrementClick}) => {
                 <li>Protesting Determination</li>
                 <li>Ballot Placement</li>
             </ol>
-            <NavLink to = {"/Proposal/ProposalSubmission"}>
+            <NavLink to = {"/proposal/step-one"}>
                 <button
                     data-testid="research-button"
                     onClick={handleIncrementClick}

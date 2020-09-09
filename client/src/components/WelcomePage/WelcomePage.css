@@ -1,0 +1,26 @@
+.option-area, .proposal-start, .research-start {
+  width: 80vw;
+  height: 60vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.proposal-start, .research-start {
+  width: 20vw;
+  height: fit-content;
+  min-height: 23vh;
+  justify-content: flex-start;
+  border: 1px black solid;
+  margin: 1em;
+}
+
+h1, p {
+  width: 50vw;
+}
+
+.cards {
+  display: flex;
+}

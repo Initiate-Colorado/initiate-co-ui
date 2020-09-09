@@ -4,8 +4,11 @@
   align-items: center;
   justify-content: center;
   height: 10vh;
+  background-color: whitesmoke;
 }
 
-p {
+p, h1 {
   font-weight: bolder;
+  width: fit-content;
 }
+

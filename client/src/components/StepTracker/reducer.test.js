@@ -9,11 +9,11 @@ describe('step tracker reducer', () => {
     const result = state(undefined, {})
     expect(result.error).toEqual(expected)
   })
-//   it('should return an initial state for isLoading to be false', () => {
-//     const expected = false
-//     const result = state(undefined, {})
-//     expect(result.isLoading).toEqual(expected)
-//   })
+  it('should return an initial state for isLoading to be false', () => {
+    const expected = 0
+    const result = state(undefined, {})
+    expect(result.ProposalStep).toEqual(expected)
+  })
 //   it('should return an initial state for isAuthenticated to be false', () => {
 //     const expected = false
 //     const result = state(undefined, {})

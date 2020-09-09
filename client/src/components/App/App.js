@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
         <Nav />
+        <div className="page-area">
         <Route 
           exact path = "/"
           render={() => <WelcomePage />} />
@@ -20,6 +21,7 @@ function App() {
         <Route 
           exact path = "/research"
           render={() => <Research />} />    
+        </div>
     </div>
   );
 }
