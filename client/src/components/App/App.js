@@ -5,6 +5,7 @@ import WelcomePage from '../WelcomePage/WelcomePage';
 import BeginInitiative from '../BeginInitiative/BeginInitiative';
 import Nav from '../Nav/Nav';
 import Research from '../Research/Research';
+import Signup from '../Signup/Signup';
 
 
 function App() {
@@ -20,7 +21,10 @@ function App() {
           render={() => <BeginInitiative />} />
         <Route 
           exact path = "/research"
-          render={() => <Research />} />    
+          render={() => <Research />} />
+        <Route 
+          exact path = "/signup"
+          render={() => <Signup />} />        
         </div>
     </div>
   );
