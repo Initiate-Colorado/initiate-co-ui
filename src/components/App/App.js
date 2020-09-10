@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 import Research from '../Research/Research';
 import Signup from '../Signup/Signup';
 import StepTracker from '../StepTracker/component'
+import Info from '../Info/Info'
 
 function App() {
   return (
@@ -25,7 +26,13 @@ function App() {
           render={() => <Research />} />
         <Route 
           exact path = "/signup"
-          render={() => <Signup />} />        
+          render={() => <Signup />} />
+        <Route 
+          exact path = "/proposal/step-one"
+          render={() => <Info />} />
+        <Route 
+          exact path = "/proposal/step-two"
+          render={() => <Info />} />               
         </div>
     </div>
   );

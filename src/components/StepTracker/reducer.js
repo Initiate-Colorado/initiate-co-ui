@@ -1,6 +1,4 @@
-const initialState = 0
-
-const initiativeStepReducer = function (state = initialState, action) {
+const initiativeStepReducer = function (state = 0, action) {
 	switch (action.type) {
 		case "INCREMENT":
 			return state + 1;

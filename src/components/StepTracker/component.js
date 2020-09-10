@@ -21,7 +21,7 @@ const StepTracker = ({ProposalStep, handleIncrementClick, handleDecrementClick})
         { label: "Protesting the Secretary of State's Determination" },
         { label: "Placement on Ballot" },
       ]}
-			activeStep={ProposalStep}
+			activeStep={ProposalStep - 1}
 		/>
 		<button onClick={handleDecrementClick}>Decrement</button>
 		<button onClick={handleIncrementClick}>Increment</button>
