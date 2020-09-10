@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const StepTwo = ({handleIncrementClick}) => {
+const StepTwo = ({ProposalStep, handleIncrementClick}) => {
 	return (
     <section className="step-two">
-      <h1>Step Two: Review and Comment</h1>
+      <h1>Step {ProposalStep}: Review and Comment</h1>
       <p>
       The purpose of a review and comment meeting is twofold:
 to review the wording of an initiative with the proponents so that the initiative accomplishes the proponents' intent and
@@ -22,6 +22,12 @@ If either designated representative fails to attend a review and comment meeting
 	);
 };
 
+const mapStateToProps = state => {
+  return {
+    ProposalStep: state
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     handleIncrementClick: () => dispatch({ type: 'INCREMENT' }),
@@ -29,5 +35,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(null, mapDispatchToProps)(StepTwo);
+export default connect(mapStateToProps, mapDispatchToProps)(StepTwo);
 

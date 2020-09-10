@@ -44,7 +44,31 @@ function App() {
           render={() => <Info />} />
         <Route 
           exact path = "/proposal/step-six"
-          render={() => <Info />} />                                            
+          render={() => <Info />} />
+        <Route 
+          exact path = "/proposal/step-seven"
+          render={() => <Info />} />
+        <Route 
+          exact path = "/proposal/step-eight"
+          render={() => <Info />} />
+        <Route 
+          exact path = "/proposal/step-nine"
+          render={() => <Info />} />
+                  <Route 
+          exact path = "/proposal/step-ten"
+          render={() => <Info />} />        
+                  <Route 
+          exact path = "/proposal/step-eleven"
+          render={() => <Info />} />        
+                  <Route 
+          exact path = "/proposal/step-twelve"
+          render={() => <Info />} />
+                  <Route 
+          exact path = "/proposal/step-thirteen"
+          render={() => <Info />} />        
+                  <Route 
+          exact path = "/proposal/step-fourteen"
+          render={() => <Info />} />                                                                          
         </div>
     </div>
   );

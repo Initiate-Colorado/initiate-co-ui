@@ -2,10 +2,11 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const StepOne = ({handleIncrementClick}) => {
+const StepOne = ({ProposalStep, handleIncrementClick}) => {
+
 	return (
     <section className="step-one">
-      <h1>Step One: Submission of a Proposal</h1>
+      <h1>Step {ProposalStep}: Submission of a Proposal</h1>
       <p>
         Any person who intends to collect signatures to place a constitutional
         amendment or law on a statewide election ballot must submit the
@@ -37,6 +38,12 @@ const StepOne = ({handleIncrementClick}) => {
 	);
 };
 
+const mapStateToProps = state => {
+  return {
+    ProposalStep: state
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     handleIncrementClick: () => dispatch({ type: 'INCREMENT' }),
@@ -44,5 +51,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(null, mapDispatchToProps)(StepOne);
+export default connect(mapStateToProps, mapDispatchToProps)(StepOne);
 

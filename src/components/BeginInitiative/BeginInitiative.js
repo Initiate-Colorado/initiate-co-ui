@@ -3,7 +3,8 @@ import './BeginInitiative.css';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const BeginInitiative = ({handleIncrementClick}) => {
+const BeginInitiative = ({ProposalStep, handleIncrementClick}) => {
+    ProposalStep = 0
     return (
         <section className = "begin-initiative">
             <h1>Congratulations on taking the first step towards proposing a ballot initiative!</h1>
