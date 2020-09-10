@@ -1,11 +1,14 @@
 import React from 'react';
 import './InitiativeContainer.css';
+import Official from '../Official/Official';
+import Proposed from '../Proposed/Proposed';
 
 
 function InitiativeContainer() {
   return (
     <div className="InitiativeContainer">
-      <h1>This will hold our initiatives</h1>
+      <Official />
+      <Proposed />
     </div>
   );
 }

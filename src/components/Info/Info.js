@@ -1,6 +1,7 @@
 import React from "react";
 import "./Info.css";
 import { connect } from "react-redux";
+import StepTracker from '../StepTracker/component'
 import BeginInitiative from '../BeginInitiative/BeginInitiative';
 import StepOne from "../mocks/StepOne";
 import StepTwo from "../mocks/StepTwo";
