@@ -2,6 +2,7 @@ import React from 'react';
 import './BeginInitiative.css';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import StepTracker from '../StepTracker/component'
 
 const BeginInitiative = ({handleIncrementClick}) => {
     return (
@@ -31,7 +32,7 @@ const BeginInitiative = ({handleIncrementClick}) => {
                 >
                         GET STARTED
                 </button>
-            </NavLink>         
+            </NavLink>    
         </section>
     )
 }

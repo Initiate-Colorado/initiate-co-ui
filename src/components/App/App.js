@@ -6,12 +6,13 @@ import BeginInitiative from '../BeginInitiative/BeginInitiative';
 import Nav from '../Nav/Nav';
 import Research from '../Research/Research';
 import Signup from '../Signup/Signup';
-
+import StepTracker from '../StepTracker/component'
 
 function App() {
   return (
     <div className="App">
         <Nav />
+        <StepTracker />
         <div className="page-area">
         <Route 
           exact path = "/"
