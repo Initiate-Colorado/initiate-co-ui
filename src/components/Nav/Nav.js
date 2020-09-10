@@ -6,9 +6,11 @@ function Nav() {
   return (
     <div className="Nav">
       <header className="Nav-header">
-
         <p className="Nav-p">
           Nav
+        </p>
+        <p className="logged">
+          Logged In
         </p>
       </header>
     </div>

@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-const StepFour = ({ handleIncrementClick }) => {
+const StepFour = ({ProposalStep, handleIncrementClick }) => {
 	return (
 		<section className="step-four">
-			<h1> Step 4: Filing with Secretary of State</h1>
+			<h1> Step {ProposalStep}: Filing with Secretary of State</h1>
 			<p>
 				Following the review and comment process, proponents may submit their
 				proposal to the Secretary of State to begin the process of having a
@@ -29,10 +29,16 @@ const StepFour = ({ handleIncrementClick }) => {
 	);
 };
 
+const mapStateToProps = state => {
+  return {
+    ProposalStep: state
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
 	};
 };
 
-export default connect(null, mapDispatchToProps)(StepFour);
+export default connect(mapStateToProps, mapDispatchToProps)(StepFour);

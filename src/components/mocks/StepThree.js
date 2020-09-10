@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-const StepThree = ({ handleIncrementClick }) => {
+const StepThree =  ({ProposalStep, handleIncrementClick}) => {
 	return (
 		<section className="step-three">
-			<h1>Step Three: Re-Submission of Revised Proposal</h1>
+			<h1>Step {ProposalStep}: Re-Submission of Revised Proposal</h1>
 			<p>
 				Some proponents revise their proposals after the review and comment
 				meeting. A revised proposal must be submitted to legislative staff for
@@ -32,10 +32,16 @@ const StepThree = ({ handleIncrementClick }) => {
 	);
 };
 
+const mapStateToProps = state => {
+  return {
+    ProposalStep: state
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
 	};
 };
 
-export default connect(null, mapDispatchToProps)(StepThree);
+export default connect(mapStateToProps, mapDispatchToProps)(StepThree);

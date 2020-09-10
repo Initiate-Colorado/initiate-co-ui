@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-const StepFive = ({ handleIncrementClick }) => {
+const StepFive = ({ProposalStep, handleIncrementClick }) => {
 	return (
 		<section className="step-five">
-			<h1>Step Five: Title Setting</h1>
+			<h1>Step {ProposalStep}: Title Setting</h1>
 			<p>
 				The ballot title and submission clause are set by a "Title Board,"
 				consisting of the Secretary of State, the Attorney General, and the
@@ -42,10 +42,16 @@ const StepFive = ({ handleIncrementClick }) => {
 	);
 };
 
+const mapStateToProps = state => {
+  return {
+    ProposalStep: state
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
 	};
 };
 
-export default connect(null, mapDispatchToProps)(StepFive);
+export default connect(mapStateToProps, mapDispatchToProps)(StepFive);
