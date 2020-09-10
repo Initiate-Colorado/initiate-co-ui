@@ -1,6 +1,7 @@
 import React from "react";
 import "./Info.css";
 import { connect } from "react-redux";
+import BeginInitiative from '../BeginInitiative/BeginInitiative';
 import StepOne from "../mocks/StepOne";
 import StepTwo from "../mocks/StepTwo";
 import StepThree from "../mocks/StepThree";
@@ -20,6 +21,7 @@ const Info = ({ ProposalStep }) => {
 	console.log(ProposalStep);
 	return (
 		<section className="info">
+      {ProposalStep === 0 && <BeginInitiative />}
 			{ProposalStep === 1 && <StepOne />}
 			{ProposalStep === 2 && <StepTwo />}
 			{ProposalStep === 3 && <StepThree />}
