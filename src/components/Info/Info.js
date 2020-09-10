@@ -3,7 +3,10 @@ import "./Info.css";
 import { connect } from "react-redux";
 import StepOne from '../mocks/StepOne'
 import StepTwo from '../mocks/StepTwo'
-
+import StepThree from '../mocks/StepThree'
+import StepFour from '../mocks/StepFour'
+import StepFive from '../mocks/StepFive'
+import StepSix from '../mocks/StepSix'
 
 const Info = ({ ProposalStep, handleIncrementClick }) => {
   console.log(ProposalStep)
@@ -14,6 +17,18 @@ const Info = ({ ProposalStep, handleIncrementClick }) => {
         )}
         {ProposalStep === 2 && (
           <StepTwo />
+        )}
+        {ProposalStep === 3 && (
+          <StepThree />
+        )}
+        {ProposalStep === 4 && (
+          <StepFour />
+        )}
+        {ProposalStep === 5 && (
+          <StepFive />
+        )}
+        {ProposalStep === 6 && (
+          <StepSix />
         )}
       </section>
 	);
