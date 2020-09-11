@@ -8,16 +8,16 @@ function Nav() {
   return (
     <div className="Nav">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet" />
-      <NavLink to={"/"}>
-        <img src= {logo} alt="logo" className="logo"/>
-      </NavLink>    
       <header className="Nav-header">
+        <NavLink to={"/"}>
+         <img src= {logo} alt="logo" className="logo"/>
+        </NavLink>    
         <p className="Nav-p">
           INITIATE COLORADO
         </p>
-        <p className="logged">
-          Logged In
-        </p>
+        <button className="log-button">
+          LogIn/LogOut
+        </button>
       </header>
     </div>
   );
