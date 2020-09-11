@@ -33,11 +33,11 @@ const StepFive = ({ProposalStep, handleIncrementClick }) => {
 				when preparing fiscal impact statements.
 			</p>
 			<h3>Last Title Board for 2020: April 15, 2020</h3>
-			<NavLink to={"/proposal/step-six"}>
+
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
-			</NavLink>
+
 		</section>
 	);
 };

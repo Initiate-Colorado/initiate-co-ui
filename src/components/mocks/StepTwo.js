@@ -13,11 +13,10 @@ to give the public notice that a proposal on a given topic is under consideratio
 If either designated representative fails to attend a review and comment meeting, the petition is considered withdrawn by the proponents.  If one of the designated representatives fails to attend a review and comment meeting, the proposal is deemed to be automatically resubmitted to the directors of the Legislative Council and Office of Legislative Legal Services for review and comment, unless the designated representative who is present objects to the automatic resubmission.  A review and comment meeting on a resubmitted proposal is scheduled with the designated representatives and the staff of the Legislative Council and the Office of Legislative Legal Services on a date no later than five business days after the resubmission.
       </p>
       <h3>Last Day for Review: April 3, 2020</h3>
-      <NavLink to={"/proposal/step-three"}>
+
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
-			</NavLink>
     </section>
 	);
 };

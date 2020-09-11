@@ -20,11 +20,11 @@ const StepFour = ({ProposalStep, handleIncrementClick }) => {
 				State by 3:00 p.m. on the 12th day before a meeting.
 			</p>
 			<h3>Last Day for Filing: April 3, 2020</h3>
-			<NavLink to={"/proposal/step-five"}>
+
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
-			</NavLink>
+
 		</section>
 	);
 };

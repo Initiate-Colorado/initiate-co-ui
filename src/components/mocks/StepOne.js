@@ -29,11 +29,9 @@ const StepOne = ({ProposalStep, handleIncrementClick}) => {
         A proponent can withdraw a proposal at any time.
       </p>
       <h3>Submission Deadline: March 20, 2020</h3>
-      <NavLink to={"/proposal/step-two"}>
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
-			</NavLink>
     </section>
 	);
 };
