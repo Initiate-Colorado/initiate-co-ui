@@ -26,3 +26,9 @@
   justify-content: center;
 }
 
+.logo {
+  display: inline-flex;
+  height: 90%;
+  width: 15%;
+}
+
