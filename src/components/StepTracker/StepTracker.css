@@ -1,0 +1,43 @@
+.step-tracker {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  align-items: center;
+  justify-content: end;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: white;
+  padding-left: .5em;
+  padding-right: .75em;
+}
+
+div .RFS-StepperContainer, div .RFS-StepContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #4F6D7A;
+}
+
+div .RFS-StepMain {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  border: 1px black solid;
+  width: 17vw;
+  padding: 1em;
+  font-weight: bolder;
+  background-color: #4F6D7A;
+}
+
+.RFS-ConnectorContainer {
+  display: none;
+}
+
+.RFS-LabelContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 15vw;
+}

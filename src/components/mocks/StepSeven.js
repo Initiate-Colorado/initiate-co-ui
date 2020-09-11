@@ -29,11 +29,11 @@ const StepSeven = ({ ProposalStep, handleIncrementClick }) => {
 				abstract does not comply with statutory requirements.
 			</p>
 			<h3>Last Title Board meeting for rehearings for 2020: April 24, 2020</h3>
-			<NavLink to={"/proposal/step-eight"}>
+
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
-			</NavLink>
+
 		</section>
 	);
 };

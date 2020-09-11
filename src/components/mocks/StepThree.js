@@ -23,11 +23,11 @@ const StepThree =  ({ProposalStep, handleIncrementClick}) => {
 				Last Day for Review and Comment Meeting on Revised Proposal: April 3,
 				2020
 			</h3>
-			<NavLink to={"/proposal/step-four"}>
+
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
-			</NavLink>
+
 		</section>
 	);
 };

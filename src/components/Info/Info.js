@@ -1,7 +1,7 @@
 import React from "react";
 import "./Info.css";
 import { connect } from "react-redux";
-import StepTracker from '../StepTracker/component'
+import StepTracker from '../StepTracker/StepTracker'
 import BeginInitiative from '../BeginInitiative/BeginInitiative';
 import StepOne from "../mocks/StepOne";
 import StepTwo from "../mocks/StepTwo";
@@ -19,7 +19,9 @@ import StepThirteen from "../mocks/StepThirteen";
 import StepFourteen from "../mocks/StepFourteen";
 
 const Info = ({ ProposalStep }) => {
-	console.log(ProposalStep);
+	if (ProposalStep > 14) {
+		ProposalStep = 0
+	}
 	return (
 		<section className="info">
       {ProposalStep === 0 && <BeginInitiative />}
@@ -37,6 +39,7 @@ const Info = ({ ProposalStep }) => {
 			{ProposalStep === 12 && <StepTwelve />}
 			{ProposalStep === 13 && <StepThirteen />}
 			{ProposalStep === 14 && <StepFourteen />}
+			{ProposalStep > 14 && { ProposalStep : 0 } &&<BeginInitiative />}
 		</section>
 	);
 };
