@@ -1,7 +1,7 @@
 .Nav {
   height: 10vh;
   width: 100vw;
-  background-color: whitesmoke;
+  background-color: #4F6D7A
 }
 
 .Nav-header {
@@ -9,11 +9,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  font-family: 'Cinzel', serif;
 }
 
 .Nav-p {
   width: fit-content;
+  color: #EAEAEA
 }
 
 
