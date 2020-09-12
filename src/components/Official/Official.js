@@ -24,7 +24,7 @@ class Official extends Component {
         this.setState({
           data: response.data.data.ballots
         })
-        // console.log(this.state)
+        console.log(this.state)
         }
       ).catch(function (error) {
         console.log(error);
@@ -39,6 +39,7 @@ class Official extends Component {
       this.setState({
         data: officialBallots.data
       })
+      // console.log(this.state)
     } catch (error) {
         this.setState({error: error})
     }
@@ -47,7 +48,6 @@ class Official extends Component {
 
 
   render () {
-    console.log(this.state)
     return (
       <div className="Official">
         <h1>This will hold our official initiatives</h1>
