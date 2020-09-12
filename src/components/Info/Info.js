@@ -3,6 +3,8 @@ import "./Info.css";
 import { connect } from "react-redux";
 import StepTracker from '../StepTracker/StepTracker'
 import BeginInitiative from '../BeginInitiative/BeginInitiative';
+import axios from 'axios'
+import { query } from 'gql-query-builder'
 import StepOne from "../mocks/StepOne";
 import StepTwo from "../mocks/StepTwo";
 import StepThree from "../mocks/StepThree";
@@ -18,10 +20,28 @@ import StepTwelve from "../mocks/StepTwelve";
 import StepThirteen from "../mocks/StepThirteen";
 import StepFourteen from "../mocks/StepFourteen";
 
+
 const Info = ({ ProposalStep }) => {
 	if (ProposalStep > 14) {
 		ProposalStep = 0
 	}
+
+	const getSteps = (id) => {
+      return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+        operation: 'ballotProcess',
+        variables: { id: 1 },
+        fields: ['id']
+      })).then(
+        response => {
+          console.log(response)
+        }
+      ).catch(function (error) {
+        console.log(error);
+      })
+	}
+
+	getSteps(ProposalStep)
+
 	return (
 		<section className="info">
       {ProposalStep === 0 && <BeginInitiative />}

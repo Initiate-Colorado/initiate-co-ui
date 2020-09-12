@@ -23,7 +23,11 @@ const StepFive = ({ProposalStep, handleIncrementClick }) => {
 				a proposal must be set within two weeks after the first meeting of the
 				Title Board. Legislative Council Staff prepares an initial fiscal impact
 				statement for each statewide initiated measure considered by the Title
-				Board. A brief abstract summarizing each measure’s fiscal impact is also
+				Board. 
+				</p>
+				<input>Ballot Title</input>
+				<p>
+				A brief abstract summarizing each measure’s fiscal impact is also
 				prepared, and the measure’s proponents must include this abstract on
 				signature-collection petitions. More information abuot submitting fiscal
 				estimates is available here. Proponents and other interested persons may

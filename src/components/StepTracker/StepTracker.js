@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Stepper } from "react-form-stepper";
-import Proposed from "../Proposed/Proposed";
 import "./StepTracker.css";
+
 
 const StepTracker = ({
 	ProposalStep,
