@@ -1,3 +1,5 @@
+const savedStep = localStorage.getItem('savedUserStep')
+
 const initiativeStepReducer = function (state = 0, action) {
 	switch (action.type) {
 		case "INCREMENT":
@@ -6,6 +8,8 @@ const initiativeStepReducer = function (state = 0, action) {
 			return state - 1;
 		case "RESET":
 			return state = 0;
+		case "FORCE":
+			return state = savedStep;
 		default:
 			return state;
 	}

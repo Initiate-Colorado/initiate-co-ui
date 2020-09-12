@@ -8,3 +8,11 @@
   border: 1px black solid;
   width: 80vw;
 }
+
+.signee-names, .plaintext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+}

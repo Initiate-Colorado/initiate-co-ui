@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
-import { query, mutation } from 'gql-query-builder'
+import { query } from 'gql-query-builder'
 
 // Component
-class Signup extends Component {
+class Login extends Component {
 
   constructor(props) {
     super(props)
@@ -15,25 +15,33 @@ class Signup extends Component {
       error: '',
       isLoading: false,
       user: {
-        name: '',
         email: '',
         password: '',
       }
     }
   }
 
-  register(userDetails) {
-      return axios.post('https://initiate-co-backend.herokuapp.com/', mutation({
-        operation: 'userSignup',
-        variables: userDetails,
-        fields: ['name', 'email', 'password']
-      })).then(
-        response => {
-          console.log(response)
-        }
-      ).catch(function (error) {
-        console.log(error);
-      })
+  login = () => {
+    return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+      operation: 'ballots',
+    })).then(
+      response => {
+        console.log(response)
+      }
+    ).catch(error => {
+      console.log(error);
+    })
+  }
+
+
+  onLogin = (event) => {
+    event.preventDefault()
+
+    this.setState({
+      isLoading: true
+    })
+
+    this.login(this.state.user.email, this.state.user.password)
   }
   
 
@@ -46,29 +54,11 @@ class Signup extends Component {
     })
   }
 
-  onSubmit = (event) => {
-    event.preventDefault()
-
-    this.setState({
-      isLoading: true
-    })
-
-    this.register(this.state.user)
-  }
 
   render() {
     return (
           <form >
             <div style={{ width: '25em', margin: '0 auto' }}>
-              {/* Name */}
-              <input
-                type="text"
-                placeholder="Name"
-                name="name"
-                value={this.state.user.name}
-                onChange={this.onChange}
-              />
-
               {/* Email */}
               <input
                 type="email"
@@ -94,8 +84,8 @@ class Signup extends Component {
 
             <div style={{ marginTop: '2em' }}>
               {/* Form submit */}
-              <button type="submit" theme="secondary" disabled={this.state.isLoading} onClick={this.onSubmit}>
-                Signup
+              <button type="submit" theme="secondary" onClick={this.onLogin}>
+                Login
               </button>
             </div>
           </form>
@@ -105,4 +95,4 @@ class Signup extends Component {
 
 // Component Properties
 
-export default connect(null, )(withRouter(Signup))
+export default connect(null, )(withRouter(Login))

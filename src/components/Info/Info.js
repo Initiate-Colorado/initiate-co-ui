@@ -1,8 +1,9 @@
 import React from "react";
 import "./Info.css";
 import { connect } from "react-redux";
-import StepTracker from '../StepTracker/StepTracker'
 import BeginInitiative from '../BeginInitiative/BeginInitiative';
+import axios from 'axios'
+import { query } from 'gql-query-builder'
 import StepOne from "../mocks/StepOne";
 import StepTwo from "../mocks/StepTwo";
 import StepThree from "../mocks/StepThree";
@@ -18,10 +19,30 @@ import StepTwelve from "../mocks/StepTwelve";
 import StepThirteen from "../mocks/StepThirteen";
 import StepFourteen from "../mocks/StepFourteen";
 
-const Info = ({ ProposalStep }) => {
+
+const Info = ({ ProposalStep, handleStepSet}) => {
 	if (ProposalStep > 14) {
 		ProposalStep = 0
 	}
+
+	const getSteps = (id) => {
+      return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+        operation: 'ballotProcess',
+        variables: { id: id },
+        fields: ['id']
+      })).then(
+        response => {
+          console.log(response)
+        }
+      ).catch(function (error) {
+        console.log(error);
+      })
+	}
+
+	localStorage.setItem('savedUserStep', ProposalStep)
+
+	getSteps(ProposalStep)
+
 	return (
 		<section className="info">
       {ProposalStep === 0 && <BeginInitiative />}
@@ -50,5 +71,10 @@ const mapStateToProps = (state) => {
 	};
 };
 
+const mapDispatchToProps = (dispatch) => {
+	return {
+		handleStepSet: () => dispatch({ type: "FORCE" }),
+	};
+};
 
-export default connect(mapStateToProps)(Info);
+export default connect(mapStateToProps, mapDispatchToProps)(Info);
