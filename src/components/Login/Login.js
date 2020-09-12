@@ -21,12 +21,38 @@ class Login extends Component {
     }
   }
 
-  login = () => {
+  login = (details) => {
+    console.log(details)
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
-      operation: 'ballots',
+      operation: 'userLogin',
+      variables: details,
+      fields: ['user']
     })).then(
       response => {
-        console.log(response)
+        console.log(response.data.data.user)
+        this.setState({
+          user: {
+            id: response.data.data.user.id
+          }
+        })
+      }
+    ).catch(error => {
+      console.log(error);
+    })
+  }
+
+  setUser = (userId) => {
+    return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+      operation: 'user',
+      variables: {id: userId},
+      fields: ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']
+    })).then(
+      response => {
+        console.log(response.data.data.user)
+        this.setState({
+          user: response.data.data.user
+        })
+        localStorage.setItem("user", this.state.user)
       }
     ).catch(error => {
       console.log(error);
@@ -41,7 +67,7 @@ class Login extends Component {
       isLoading: true
     })
 
-    this.login(this.state.user.email, this.state.user.password)
+    this.login({email: this.state.user.email, password: this.state.user.password})
   }
   
 

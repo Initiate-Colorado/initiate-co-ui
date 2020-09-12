@@ -15,9 +15,14 @@ function Nav() {
         <p className="Nav-p">
           INITIATE COLORADO
         </p>
-        <button className="log-button">
-          LogIn/LogOut
-        </button>
+        <div className="signup-login">
+          <NavLink to={"/signup"} style={{ textDecoration: 'none' }}>
+          Signup
+          </NavLink> 
+          <NavLink to={"/login"} style={{ textDecoration: 'none' }}>
+          Login
+          </NavLink> 
+        </div>
       </header>
     </div>
   );
