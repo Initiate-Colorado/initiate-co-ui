@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Stepper } from "react-form-stepper";
 import "./StepTracker.css";
 
+
 const StepTracker = ({
 	ProposalStep,
 }) => (

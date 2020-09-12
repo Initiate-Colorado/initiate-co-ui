@@ -6,6 +6,7 @@ import BeginInitiative from "../BeginInitiative/BeginInitiative";
 import Nav from "../Nav/Nav";
 import Research from "../Research/Research";
 import Signup from "../Signup/Signup";
+import Login from "../Login/Login";
 import StepTracker from "../StepTracker/StepTracker";
 import Info from "../Info/Info";
 
@@ -23,6 +24,7 @@ function App() {
 				/>
 				<Route exact path="/research" render={() => <Research />} />
 				<Route exact path="/signup" render={() => <Signup />} />
+				<Route exact path="/login" render={() => <Login />} />
 				<Route
 					exact
 					path="/proposal"
@@ -33,6 +35,7 @@ function App() {
 						</div>
 					)}
 				/>
+				
 			</div>
 		</div>
 	);
