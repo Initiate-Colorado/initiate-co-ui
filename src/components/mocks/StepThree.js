@@ -8,10 +8,10 @@ class StepThree extends Component {
 		this.state = {
 			error: "",
 			ballot: {
-				newDescription: ""
+				newDescription: "",
 			},
 		};
-	}
+  }
 
 	componentDidMount() {
     const savedNewDescription = localStorage.getItem('newDescription')

@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 class StepOne extends Component {
 	constructor({ ProposalStep, handleIncrementClick }) {
 		super({ ProposalStep, handleIncrementClick });
-
 		this.state = {
 			error: "",
 			ballot: {
@@ -99,17 +98,17 @@ class StepOne extends Component {
 				</div>
 				<p>
 					Proposals can be submitted either in person, by mail, by FAX, or by
-					e-mail to:
+					e-mail to:</p>
 					<div className="address">
 						Natalie Mullis, Director Colorado Legislative Council Staff Room 029
 						State Capitol Building Denver, Colorado 80203 Phone: 303-866-3521
 						Fax: 303-866-3855 E-mail: lcs.ga@state.co.us
-					</div>
+					</div><p>
 					A proposal must be accompanied by the names and addresses of two
 					people who are representing the proponents in all matters relating to
 					the proposal. Telephone numbers and e-mail addresses are also
 					appreciated to speed communications with the designated
-					representatives of proponents.
+					representatives of proponents.</p>
 					<div className="signee-names">
 						<input
 							type="text"
@@ -160,7 +159,7 @@ class StepOne extends Component {
 							onChange={this.onChange}
 							style={{ marginTop: "1em" }}
 						/>
-					</div>
+					</div><p>
 					The Legislative Council Staff gives the proposal a number and
 					schedules a public meeting, which will be two weeks from the date the
 					measure is filed. The Legislative Council Staff also provides public
