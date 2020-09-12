@@ -1,11 +1,55 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, {Component} from "react";
 import { connect } from "react-redux";
 
-const StepFive = ({ProposalStep, handleIncrementClick }) => {
+class StepFive extends Component {
+	constructor(props){
+		super(props)
+		this.state = {
+			error: "",
+			ballot: {
+				title: "",
+				fiscal: ""
+			},
+		};
+	}
+
+  componentDidMount() {
+    const savedTitle = localStorage.getItem('title')
+    const savedFiscal = localStorage.getItem('fiscal')
+    if (savedTitle || savedFiscal ) {
+      this.setState({
+        ballot: {
+          title: savedTitle,
+          fiscal: savedFiscal,
+        }
+      })
+    }
+  }
+
+	onChange = (event) => {
+		let ballot = this.state.ballot;
+		ballot[event.target.name] = event.target.value;
+		this.setState({
+			ballot,
+		});
+	};
+
+	submitNextStep = (event) => {
+    event.preventDefault()
+    this.props.handleIncrementClick()
+    this.submitProgress(event)
+  }
+
+	submitProgress = (event) => {
+    event.preventDefault()
+		localStorage.setItem('title', this.state.ballot.title)
+    localStorage.setItem('fiscal', this.state.ballot.fiscal)
+  }
+
+	render(){
 	return (
 		<section className="step-five">
-			<h1>Step {ProposalStep}: Title Setting</h1>
+			<h1>Step {this.props.ProposalStep}: Title Setting</h1>
 			<p>
 				The ballot title and submission clause are set by a "Title Board,"
 				consisting of the Secretary of State, the Attorney General, and the
@@ -23,23 +67,54 @@ const StepFive = ({ProposalStep, handleIncrementClick }) => {
 				a proposal must be set within two weeks after the first meeting of the
 				Title Board. Legislative Council Staff prepares an initial fiscal impact
 				statement for each statewide initiated measure considered by the Title
-				Board. A brief abstract summarizing each measure’s fiscal impact is also
+				Board. 
+				</p>
+				<input
+							type="text"
+							placeholder="Your Ballot Initiative Title"
+							required="required"
+							name="title"
+							value={this.state.ballot.title}
+							onChange={this.onChange}
+							style={{ marginTop: "1em" }}
+						/>
+				<p>
+				<button onClick={this.submitProgress}>Save</button>
+				A brief abstract summarizing each measure’s fiscal impact is also
 				prepared, and the measure’s proponents must include this abstract on
-				signature-collection petitions. More information abuot submitting fiscal
+				signature-collection petitions. More information about submitting fiscal
 				estimates is available here. Proponents and other interested persons may
 				submit fiscal estimates about proposed initiatives for consideration by
 				Legislative Council Staff. Legislative Council also solicits and
 				considers fiscal estimates from state agencies and local governments
 				when preparing fiscal impact statements.
 			</p>
+			<textarea
+						type="textarea"
+						placeholder="Paste the fiscal impact abstract here"
+						required="required"
+						name="fiscal"
+						value={this.state.ballot.fiscal}
+						onChange={this.onChange}
+						style={{
+							marginTop: "1em",
+							width: "50vw",
+							height: "20vh",
+							fontFamily: "Roboto, sans-serif",
+						}}
+					/>
+			<button onClick={this.submitProgress}>Save</button>
 			<h3>Last Title Board for 2020: April 15, 2020</h3>
 
-				<button data-testid="research-button" onClick={handleIncrementClick}>
+			<button
+					data-testid="research-button"
+					onClick={this.submitNextStep}
+				>
 					Next Step
 				</button>
 
 		</section>
-	);
+	)}
 };
 
 const mapStateToProps = state => {
