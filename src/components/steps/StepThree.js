@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class StepThree extends Component {
-	constructor({ ProposalStep, handleIncrementClick }) {
-		super({ ProposalStep, handleIncrementClick });
+	constructor({ ProposalStep, handleIncrementClick, handleDecrementClick }) {
+		super({ ProposalStep, handleIncrementClick, handleDecrementClick });
 		this.state = {
 			error: "",
 			ballot: {
@@ -47,7 +47,10 @@ class StepThree extends Component {
 	render() {
 		return (
 		<section className="step-three">
+			<div className="step-title">
 			<h1>Step {this.props.ProposalStep}: Re-Submission of Revised Proposal</h1>
+			</div>
+			<div className={"step-text"}>
 			<p>
 				Some proponents revise their proposals after the review and comment
 				meeting. A revised proposal must be submitted to legislative staff for
@@ -77,15 +80,20 @@ class StepThree extends Component {
 				review and comment meeting is canceled. This notification occurs within
 				72 hours of the proposal's submission.
 			</p>
+			</div>
 			<h3>Last Day for Submitting Revised Proposal: March 20, 2020</h3>
 			<h3>
 				Last Day for Review and Comment Meeting on Revised Proposal: April 3,
 				2020
 			</h3>
-
-			<button data-testid="research-button" onClick={this.props.handleIncrementClick}>
-				Next Step
-			</button>
+			<div className="buttons">
+				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
+					Go Back
+				</button>
+				<button data-testid="research-button" onClick={this.props.handleIncrementClick}>
+					Next Step
+				</button>
+				</div>
 		</section>
 	)}
 }
@@ -99,6 +107,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" })
 	};
 };
 

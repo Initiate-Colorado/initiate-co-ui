@@ -49,7 +49,10 @@ class StepFive extends Component {
 	render(){
 	return (
 		<section className="step-five">
+						<div className="step-title">
 			<h1>Step {this.props.ProposalStep}: Title Setting</h1>
+			</div>
+			<div className={"step-text"}>
 			<p>
 				The ballot title and submission clause are set by a "Title Board,"
 				consisting of the Secretary of State, the Attorney General, and the
@@ -78,8 +81,8 @@ class StepFive extends Component {
 							onChange={this.onChange}
 							style={{ marginTop: "1em" }}
 						/>
-				<p>
 				<button onClick={this.submitProgress}>Save</button>
+				<p>
 				A brief abstract summarizing each measure’s fiscal impact is also
 				prepared, and the measure’s proponents must include this abstract on
 				signature-collection petitions. More information about submitting fiscal
@@ -104,14 +107,16 @@ class StepFive extends Component {
 						}}
 					/>
 			<button onClick={this.submitProgress}>Save</button>
+			</div>
 			<h3>Last Title Board for 2020: April 15, 2020</h3>
-
-			<button
-					data-testid="research-button"
-					onClick={this.submitNextStep}
-				>
+			<div className="buttons">
+				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
+					Go Back
+				</button>
+				<button data-testid="research-button" onClick={this.submitNextStep}>
 					Next Step
 				</button>
+				</div>
 
 		</section>
 	)}
@@ -126,6 +131,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" })
 	};
 };
 

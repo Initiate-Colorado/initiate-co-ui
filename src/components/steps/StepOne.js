@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class StepOne extends Component {
-	constructor({ ProposalStep, handleIncrementClick }) {
-		super({ ProposalStep, handleIncrementClick });
+	constructor({ ProposalStep, handleIncrementClick, handleDecrementClick }) {
+		super({ ProposalStep, handleIncrementClick, handleDecrementClick });
 		this.state = {
 			error: "",
 			ballot: {
@@ -21,29 +21,18 @@ class StepOne extends Component {
 	componentDidMount() {
 		const savedDescription = localStorage.getItem("description");
 		const savedName1 = localStorage.getItem("name1");
-		const savedPhone1 = localStorage.getItem("phone1");
-		const savedEmail1 = localStorage.getItem("email1");
 		const savedName2 = localStorage.getItem("name2");
-		const savedPhone2 = localStorage.getItem("phone2");
-		const savedEmail2 = localStorage.getItem("email2");
+
 		if (
 			savedDescription ||
 			savedName1 ||
-			savedPhone1 ||
-			savedEmail1 ||
-			savedName2 ||
-			savedPhone2 ||
-			savedEmail2
+			savedName2
 		) {
 			this.setState({
 				ballot: {
 					description: savedDescription,
 					name1: savedName1,
-					phone1: savedPhone1,
-					email1: savedEmail1,
 					name2: savedName2,
-					phone2: savedPhone2,
-					email2: savedEmail2,
 				},
 			});
 		}
@@ -59,11 +48,7 @@ class StepOne extends Component {
 		event.preventDefault();
 		localStorage.setItem("description", this.state.ballot.description);
 		localStorage.setItem("name1", this.state.ballot.name1);
-		localStorage.setItem("phone1", this.state.ballot.phone1);
-		localStorage.setItem("email1", this.state.ballot.email1);
 		localStorage.setItem("name2", this.state.ballot.name2);
-		localStorage.setItem("phone2", this.state.ballot.phone2);
-		localStorage.setItem("email2", this.state.ballot.email2);
 	};
 
 	onChange = (event) => {
@@ -160,9 +145,14 @@ class StepOne extends Component {
 				<div className="deadline">
 					<h3>Submission Deadline: March 20, 2020</h3>
 				</div>
+				<div className="buttons">
+				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
+					Go Back
+				</button>
 				<button data-testid="research-button" onClick={this.submitNextStep}>
 					Next Step
 				</button>
+				</div>
 			</section>
 		);
 	}
@@ -177,6 +167,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" }),
 	};
 };
 

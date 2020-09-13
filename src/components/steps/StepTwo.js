@@ -2,10 +2,13 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-const StepTwo = ({ ProposalStep, handleIncrementClick }) => {
+const StepTwo = ({ ProposalStep, handleIncrementClick, handleDecrementClick }) => {
 	return (
 		<section className="step-two">
+							<div className="step-title">
 			<h1>Step {ProposalStep}: Review and Comment</h1>
+			</div>
+			<div className={"step-text"}>
 			<p>
 				The purpose of a review and comment meeting is twofold: to review the
 				wording of an initiative with the proponents so that the initiative
@@ -36,11 +39,16 @@ const StepTwo = ({ ProposalStep, handleIncrementClick }) => {
 				and the Office of Legislative Legal Services on a date no later than
 				five business days after the resubmission.
 			</p>
+			</div>
 			<h3>Last Day for Review: April 3, 2020</h3>
-
-			<button data-testid="research-button" onClick={handleIncrementClick}>
-				Next Step
-			</button>
+				<div className="buttons">
+				<button data-testid="research-button" onClick={handleDecrementClick}>
+					Go Back
+				</button>
+				<button data-testid="research-button" onClick={handleIncrementClick}>
+					Next Step
+				</button>
+				</div>
 		</section>
 	);
 };
@@ -54,6 +62,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" })
 	};
 };
 
