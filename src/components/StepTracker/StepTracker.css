@@ -9,7 +9,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   padding-right: 1em;
-  width: 20vw;
+  width: 24vw;
 }
 
 div .RFS-StepperContainer, div .RFS-StepContainer {
@@ -24,7 +24,7 @@ div .RFS-StepMain {
   align-items: center;
   justify-content: space-between;
   padding: 1em;
-  width: 17vw;
+  width: 20vw;
   padding: 1em;
   font-weight: bolder;
   background-color: #E8DAB2;
