@@ -1,11 +1,13 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-const StepSeven = ({ ProposalStep, handleIncrementClick }) => {
+const StepSeven = ({ ProposalStep, handleIncrementClick, handleDecrementClick }) => {
 	return (
 		<section className="step-seven">
+			<div className="step-title">
 			<h1>Step {ProposalStep}: Rehearings of Title Board Decisions</h1>
+			</div>
+			<div className={"step-text"}>
 			<p>
 				Any proponent or registered elector who believes that a ballot title and
 				submission clause are unfair or do not fairly express the meaning of a
@@ -28,11 +30,17 @@ const StepSeven = ({ ProposalStep, handleIncrementClick }) => {
 				abstract is incorrect; the abstract is misleading or prejudicial; or the
 				abstract does not comply with statutory requirements.
 			</p>
+			</div>
 			<h3>Last Title Board meeting for rehearings for 2020: April 24, 2020</h3>
 
+			<div className="buttons">
+				<button data-testid="research-button" onClick={handleDecrementClick}>
+					Go Back
+				</button>
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
+			</div>
 
 		</section>
 	);
@@ -47,6 +55,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" })
 	};
 };
 

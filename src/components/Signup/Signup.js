@@ -18,7 +18,8 @@ class Signup extends Component {
         name: '',
         email: '',
         password: '',
-      }
+      },
+      id: null
     }
   }
 
@@ -26,14 +27,37 @@ class Signup extends Component {
       return axios.post('https://initiate-co-backend.herokuapp.com/', mutation({
         operation: 'userSignup',
         variables: userDetails,
-        fields: ['name', 'email', 'password']
+        fields: ['name', 'email', 'password', 'id']
       })).then(
         response => {
           console.log(response)
+          this.setState({
+            id: response.data.data.userSignup.id
+          })
+          this.setUser(this.state.id)
         }
       ).catch(function (error) {
         console.log(error);
       })
+  }
+
+  setUser = (userId) => {
+    return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+      operation: 'user',
+      variables: {id: userId},
+      fields: ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']
+    })).then(
+      response => {
+        console.log(response.data.data.user)
+        this.setState({
+          user: response.data.data.user
+        })
+        localStorage.setItem("user", JSON.stringify(this.state.user))
+        this.props.history.push('/')
+      }
+    ).catch(error => {
+      console.log(error);
+    })
   }
   
 
@@ -54,6 +78,8 @@ class Signup extends Component {
     })
 
     this.register(this.state.user)
+    localStorage.setItem('loggedIn', true)
+    this.props.history.push('/')
   }
 
   render() {

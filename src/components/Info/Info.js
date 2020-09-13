@@ -4,25 +4,28 @@ import { connect } from "react-redux";
 import BeginInitiative from '../BeginInitiative/BeginInitiative';
 import axios from 'axios'
 import { query } from 'gql-query-builder'
-import StepOne from "../mocks/StepOne";
-import StepTwo from "../mocks/StepTwo";
-import StepThree from "../mocks/StepThree";
-import StepFour from "../mocks/StepFour";
-import StepFive from "../mocks/StepFive";
-import StepSix from "../mocks/StepSix";
-import StepSeven from "../mocks/StepSeven";
-import StepEight from "../mocks/StepEight";
-import StepNine from "../mocks/StepNine";
-import StepTen from "../mocks/StepTen";
-import StepEleven from "../mocks/StepEleven";
-import StepTwelve from "../mocks/StepTwelve";
-import StepThirteen from "../mocks/StepThirteen";
-import StepFourteen from "../mocks/StepFourteen";
+import StepOne from "../steps/StepOne";
+import StepTwo from "../steps/StepTwo";
+import StepThree from "../steps/StepThree";
+import StepFour from "../steps/StepFour";
+import StepFive from "../steps/StepFive";
+import StepSix from "../steps/StepSix";
+import StepSeven from "../steps/StepSeven";
+import StepEight from "../steps/StepEight";
+import StepNine from "../steps/StepNine";
+import StepTen from "../steps/StepTen";
+import StepEleven from "../steps/StepEleven";
+import StepTwelve from "../steps/StepTwelve";
+import StepThirteen from "../steps/StepThirteen";
+import StepFourteen from "../steps/StepFourteen";
 
 
-const Info = ({ ProposalStep, handleStepSet}) => {
+const Info = ({ ProposalStep}) => {
+
+
 	if (ProposalStep > 14) {
 		ProposalStep = 0
+		localStorage.setItem('savedUserStep', 1)
 	}
 
 	const getSteps = (id) => {
@@ -39,12 +42,13 @@ const Info = ({ ProposalStep, handleStepSet}) => {
       })
 	}
 
-	localStorage.setItem('savedUserStep', ProposalStep)
-
 	getSteps(ProposalStep)
 
 	return (
 		<section className="info">
+			<div className="steps">
+
+
       {ProposalStep === 0 && <BeginInitiative />}
 			{ProposalStep === 1 && <StepOne />}
 			{ProposalStep === 2 && <StepTwo />}
@@ -61,6 +65,7 @@ const Info = ({ ProposalStep, handleStepSet}) => {
 			{ProposalStep === 13 && <StepThirteen />}
 			{ProposalStep === 14 && <StepFourteen />}
 			{ProposalStep > 14 && { ProposalStep : 0 } &&<BeginInitiative />}
+			</div>
 		</section>
 	);
 };
@@ -71,10 +76,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		handleStepSet: () => dispatch({ type: "FORCE" }),
-	};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Info);
+export default connect(mapStateToProps)(Info);

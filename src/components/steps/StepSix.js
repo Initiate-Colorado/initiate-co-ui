@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class StepSix extends Component {
-	constructor({ ProposalStep, handleIncrementClick }) {
-		super({ ProposalStep, handleIncrementClick });
+	constructor({ ProposalStep, handleIncrementClick, handleDecrementClick }) {
+		super({ ProposalStep, handleIncrementClick, handleDecrementClick });
 
 		this.state = {
 			error: "",
@@ -47,10 +47,13 @@ class StepSix extends Component {
 	render() {
 		return (
 			<section className="step-six">
+							<div className="step-title">
 				<h1>
 					Step {this.props.ProposalStep}: Revision of Proposal after Title Board
 					Meeting
 				</h1>
+				</div>
+				<div className={"step-text"}>
 				<p>
 					If the Title Board finds that a proposal contains more than one
 					subject, and therefore declines to set a title, the proponents may
@@ -77,13 +80,15 @@ class StepSix extends Component {
 					review. In these cases, the steps followed are identical to Steps 1
 					and 2.
 				</p>
-
-				<button
-					data-testid="research-button"
-					onClick={this.submitNextStep}
-				>
+				</div>
+				<div className="buttons">
+				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
+					Go Back
+				</button>
+				<button data-testid="research-button" onClick={this.submitNextStep}>
 					Next Step
 				</button>
+				</div>
 			</section>
 		);
 	}
@@ -98,6 +103,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" })
 	};
 };
 

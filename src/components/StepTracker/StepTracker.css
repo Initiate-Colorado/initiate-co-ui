@@ -1,14 +1,15 @@
 .step-tracker {
+  align-items: center;
+  background-color: #4F6D7A;
+  color: white;
   display: flex;
   flex-direction: column;
-  width: 20vw;
-  align-items: center;
+  height: 85vh;
   justify-content: end;
-  overflow-y: scroll;
   overflow-x: hidden;
-  color: white;
-  padding-left: .5em;
-  padding-right: .75em;
+  overflow-y: scroll;
+  padding-right: 1em;
+  width: 20vw;
 }
 
 div .RFS-StepperContainer, div .RFS-StepContainer {
@@ -23,11 +24,13 @@ div .RFS-StepMain {
   align-items: center;
   justify-content: space-between;
   padding: 1em;
-  border: 1px black solid;
   width: 17vw;
   padding: 1em;
   font-weight: bolder;
-  background-color: #4F6D7A;
+  background-color: #E8DAB2;
+  border-radius: 5px;
+  margin: 2%;
+  box-shadow: 2px 2px rgb(50, 68, 77);
 }
 
 .RFS-ConnectorContainer {
@@ -40,4 +43,12 @@ div .RFS-StepMain {
   align-items: center;
   justify-content: center;
   max-width: 15vw;
+}
+
+.RFS-Label {
+  color: #4F6D7A;
+  margin-bottom: 16px;
+  margin-left: 10px;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
 }

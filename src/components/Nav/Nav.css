@@ -1,16 +1,17 @@
 .Nav {
-  height: 10vh;
+  height: 15vh;
   width: 100vw;
-  background-color: #4F6D7A
+  background-color: #4F6D7A;
 }
 
 .Nav-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-family: 'Cinzel', serif;
   height: 100%;
+  margin-right: 5%;
 }
 
 .Nav-p {
@@ -22,16 +23,20 @@
   color: #EAEAEA
 }
 
-
-.step-tracker {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
 .logo {
-  height: 10vh;
-  width: 10%;
+  height: 15vh;
+  width: 11vw;
 } 
 
+.signup-login {
+  width: 15vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
