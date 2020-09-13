@@ -51,11 +51,7 @@ class StepOne extends Component {
     event.preventDefault()
     localStorage.setItem('description', this.state.ballot.description)
     localStorage.setItem('name1', this.state.ballot.name1)
-    localStorage.setItem('phone1', this.state.ballot.phone1)
-    localStorage.setItem('email1', this.state.ballot.email1)
     localStorage.setItem('name2', this.state.ballot.name2)
-    localStorage.setItem('phone2', this.state.ballot.phone2)
-    localStorage.setItem('email2', this.state.ballot.email2)
   }
 
 	onChange = (event) => {
