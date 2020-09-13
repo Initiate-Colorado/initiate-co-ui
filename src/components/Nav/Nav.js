@@ -12,9 +12,6 @@ function Nav() {
         <NavLink to={"/"}>
          <img src= {logo} alt="logo" className="logo"/>
         </NavLink>    
-        <p className="Nav-p">
-          INITIATE COLORADO
-        </p>
         <div className="signup-login">
           <NavLink to={"/signup"} style={{ textDecoration: 'none' }}>
           Signup
