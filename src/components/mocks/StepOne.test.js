@@ -77,6 +77,6 @@ describe('StepOne', () => {
     const submitProposalButton = getByTestId('research-button')
     expect(submitNextStep).toHaveBeenCalledTimes(0)
     fireEvent.click(submitProposalButton)
-    expect(submitNextStep).toHaveBeenCalledTimes(1)
+    expect(submitProposalButton).toHaveBeenCalledTimes(1)
     });  
 });
