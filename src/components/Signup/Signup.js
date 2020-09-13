@@ -78,6 +78,7 @@ class Signup extends Component {
     })
 
     this.register(this.state.user)
+    localStorage.setItem('loggedIn', true)
     this.props.history.push('/')
   }
 

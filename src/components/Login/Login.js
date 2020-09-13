@@ -34,6 +34,7 @@ class Login extends Component {
           user: response.data.data.userLogin.user
         })
         localStorage.setItem("user", JSON.stringify(this.state.user))
+        localStorage.setItem('loggedIn', true)
       }
     ).catch(error => {
       console.log(error);
@@ -67,6 +68,7 @@ class Login extends Component {
     })
 
     this.login(this.state.user)
+    localStorage.setItem('loggedIn', true)
     this.props.history.push('/')
   }
   

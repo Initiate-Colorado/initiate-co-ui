@@ -13,30 +13,81 @@ import Info from "../Info/Info";
 function App() {
 	return (
 		<div className="App">
-			<Nav />
-
-			<div className="page-area">
-				<Route exact path="/" render={() => <WelcomePage />} />
-				<Route
-					exact
-					path="/begin-proposal"
-					render={() => <BeginInitiative />}
-				/>
-				<Route exact path="/research" render={() => <Research />} />
-				<Route exact path="/signup" render={() => <Signup />} />
-				<Route exact path="/login" render={() => <Login />} />
-				<Route
-					exact
-					path="/proposal"
-					render={() => (
+			<Route
+				exact
+				path="/"
+				render={() => (
+					<>
+					<Nav />
+					<div className="page-area">
+						<WelcomePage />
+					</div>
+					</>
+				)}
+			/>
+			<Route
+				exact
+				path="/begin-proposal"
+				render={() => (
+					<>
+					<Nav />
+					<div className="page-area">
+						<BeginInitiative />
+					</div>
+					</>
+				)}
+			/>
+			<Route
+				exact
+				path="/research"
+				render={() => (
+					<>
+					<Nav />
+					<div className="page-area">
+						<Research />
+					</div>
+					</>
+				)}
+			/>
+			<Route
+				exact
+				path="/signup"
+				render={() => (
+					<>
+					<Nav />
+					<div className="page-area">
+						<Signup />
+					</div>
+					</>
+				)}
+			/>
+			<Route
+				exact
+				path="/login"
+				render={() => (
+					<>
+					<Nav />
+					<div className="page-area">
+						<Login />
+					</div>
+					</>
+				)}
+			/>
+			<Route
+				exact
+				path="/proposal"
+				render={() => (
+					<>
+					<Nav />
+					<div className="page-area">
 						<div className="proposal">
 							<StepTracker />
 							<Info />
 						</div>
-					)}
-				/>
-				
-			</div>
+					</div>
+					</>
+				)}
+			/>
 		</div>
 	);
 }
