@@ -78,6 +78,7 @@ class Signup extends Component {
     })
 
     this.register(this.state.user)
+    this.props.history.push('/')
   }
 
   render() {
