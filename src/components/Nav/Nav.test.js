@@ -9,7 +9,7 @@ describe('Nav', () => {
 
   it('Should render the Nav component', () => {
     const { getByText } = render(<MemoryRouter><Nav /></MemoryRouter>);
-    const optionText = getByText('Nav');
+    const optionText = getByText('INITIATE COLORADO');
     expect(optionText).toBeInTheDocument();
   });  
 })
