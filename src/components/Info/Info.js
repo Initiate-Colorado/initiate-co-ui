@@ -20,9 +20,12 @@ import StepThirteen from "../mocks/StepThirteen";
 import StepFourteen from "../mocks/StepFourteen";
 
 
-const Info = ({ ProposalStep, handleStepSet}) => {
+const Info = ({ ProposalStep}) => {
+
+
 	if (ProposalStep > 14) {
 		ProposalStep = 0
+		localStorage.setItem('savedUserStep', 1)
 	}
 
 	const getSteps = (id) => {
@@ -38,8 +41,6 @@ const Info = ({ ProposalStep, handleStepSet}) => {
         console.log(error);
       })
 	}
-
-	localStorage.setItem('savedUserStep', ProposalStep)
 
 	getSteps(ProposalStep)
 
@@ -71,10 +72,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		handleStepSet: () => dispatch({ type: "FORCE" }),
-	};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Info);
+export default connect(mapStateToProps)(Info);

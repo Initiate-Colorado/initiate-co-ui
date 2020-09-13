@@ -67,6 +67,7 @@ class Login extends Component {
     })
 
     this.login(this.state.user)
+    this.props.history.push('/')
   }
   
 

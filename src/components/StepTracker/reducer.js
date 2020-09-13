@@ -1,8 +1,15 @@
-const savedStep = localStorage.getItem('savedUserStep')
+let savedStep
+let userStep = localStorage.getItem('savedUserStep')
+if(userStep) {
+	savedStep = parseInt(userStep)
+} else {
+	savedStep = 0
+}
 
-const initiativeStepReducer = function (state = 0, action) {
+const initiativeStepReducer = function (state = savedStep, action) {
 	switch (action.type) {
 		case "INCREMENT":
+			localStorage.setItem('savedUserStep', state + 1)
 			return state + 1;
 		case "DECREMENT":
 			return state - 1;
