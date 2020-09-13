@@ -8,8 +8,8 @@ const Proposed = () => {
 
   const getProposedBallots = () =>  {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
-      operation: 'ballots',
-      fields: ['id']
+      operation: 'proposedBallots',
+      fields: [{ ballots: ['id', 'title']}]
     })).then(
       response => {
         console.log(response.data.data.ballots)
