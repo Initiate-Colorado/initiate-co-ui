@@ -7,13 +7,10 @@ class StepOne extends Component {
 		this.state = {
 			error: "",
 			ballot: {
+				title: "",
 				description: "",
 				name1: "",
-				phone1: "",
-				email1: "",
 				name2: "",
-				phone2: "",
-				email2: "",
 			},
 		};
 	}
@@ -22,17 +19,15 @@ class StepOne extends Component {
 		const savedDescription = localStorage.getItem("description");
 		const savedName1 = localStorage.getItem("name1");
 		const savedName2 = localStorage.getItem("name2");
+		const savedTitle = localStorage.getItem("title");
 
-		if (
-			savedDescription ||
-			savedName1 ||
-			savedName2
-		) {
+		if (savedDescription || savedName1 || savedName2 || savedTitle) {
 			this.setState({
 				ballot: {
 					description: savedDescription,
 					name1: savedName1,
 					name2: savedName2,
+					title: savedTitle
 				},
 			});
 		}
@@ -49,6 +44,7 @@ class StepOne extends Component {
 		localStorage.setItem("description", this.state.ballot.description);
 		localStorage.setItem("name1", this.state.ballot.name1);
 		localStorage.setItem("name2", this.state.ballot.name2);
+		localStorage.setItem("title", this.state.ballot.title);
 	};
 
 	onChange = (event) => {
@@ -67,6 +63,18 @@ class StepOne extends Component {
 					<h1>Step {this.props.ProposalStep}: Submission of a Proposal</h1>
 				</div>
 				<div className="step-text">
+					<p>What do you want to call this initiative?</p>
+					<p>(You'll pick an official title later )</p>
+					<input
+						type="text"
+						placeholder="Initiative Title"
+						required="required"
+						name="title"
+						value={this.state.ballot.title}
+						onChange={this.onChange}
+						style={{ marginTop: "1em" }}
+					/>
+					<button onClick={this.submitProgress}>Save</button>
 					<p>
 						Any person who intends to collect signatures to place a
 						constitutional amendment or law on a statewide election ballot must
@@ -146,12 +154,15 @@ class StepOne extends Component {
 					<h3>Submission Deadline: March 20, 2020</h3>
 				</div>
 				<div className="buttons">
-				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
-					Go Back
-				</button>
-				<button data-testid="research-button" onClick={this.submitNextStep}>
-					Next Step
-				</button>
+					<button
+						data-testid="research-button"
+						onClick={this.props.handleDecrementClick}
+					>
+						Go Back
+					</button>
+					<button data-testid="research-button" onClick={this.submitNextStep}>
+						Next Step
+					</button>
 				</div>
 			</section>
 		);
