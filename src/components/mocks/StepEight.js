@@ -12,7 +12,6 @@ const StepEight = ({ProposalStep, handleIncrementClick}) => {
 				<button data-testid="research-button" onClick={handleIncrementClick}>
 					Next Step
 				</button>
-
     </section>
 	);
 };

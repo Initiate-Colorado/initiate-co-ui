@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Official from './Official';
+import StepFour from './StepFour';
 import { MemoryRouter } from 'react-router-dom';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux'
-import '@testing-library/jest-dom'
+import { Provider } from 'react-redux';
+import '@testing-library/jest-dom';
 import initiativeStepReducer from '../StepTracker/reducer';
 
 
-describe('Official', () => {
+describe('StepFour', () => {
 
   let store;
 
@@ -16,14 +16,14 @@ describe('Official', () => {
     store = createStore(initiativeStepReducer);
   })
 
-  it('Should render the Official component', () => {
+  it('Should render the StepFour page', () => {
     const { getByText } = render(
     <Provider store = { store }>
       <MemoryRouter>
-        <Official />
+        <StepFour />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('This will hold our official initiatives');
+    const optionText = getByText('Step 0: Filing with Secretary of State');
     expect(optionText).toBeInTheDocument();
   });  
-});
+});  

@@ -1,27 +1,18 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import { query } from 'gql-query-builder'
+import axios from 'axios';
+import { connect } from "react-redux";
+import { query } from 'gql-query-builder';
 import './Proposed.css';
 
-class Proposed extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      error: '',
-      data: {}
-    }
-  }
+const Proposed = () => {
 
-  getProposedBallots() {
+  const getProposedBallots = () =>  {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
       operation: 'ballots',
       fields: ['id']
     })).then(
       response => {
-        this.setState({
-          data: response.data.data.ballots
-        })
-        // console.log(this.state)
+        console.log(response.data.data.ballots)
         }
       ).catch(function (error) {
         console.log(error);
@@ -29,26 +20,22 @@ class Proposed extends Component {
     )
   }
   
-  componentDidMount = async() => {
-    try {
-      const officialBallots = await this.getProposedBallots()
-      this.setState({
-        data: officialBallots.data
-      })
-    } catch (error) {
-        this.setState({error: error})
-    }
-  }
-  
-  render () {
-    return (
-      <div className="Proposed">
+  getProposedBallots();
+
+  return (
+      <div className="Official">
         <h1>This will hold our proposed initiatives</h1>
         {/* <h1>{this.state.data}</h1> */}
       </div>
     );
-  }
-}
+};   
 
-export default Proposed;
+const mapStateToProps = (state) => {
+  return {
+    ballots: state
+  };
+};
+
+
+export default connect(mapStateToProps, null)(Proposed);
 
