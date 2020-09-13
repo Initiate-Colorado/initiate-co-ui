@@ -94,7 +94,10 @@ class StepOne extends Component {
 							fontFamily: "Roboto, sans-serif",
 						}}
 					/>
-          <button onClick={this.submitProgress}>Save</button>
+          <button 
+		  	data-testid="submit progress button"
+		  	onClick={this.submitProgress}>
+			Save</button>
 				</div>
 				<p>
 					Proposals can be submitted either in person, by mail, by FAX, or by
