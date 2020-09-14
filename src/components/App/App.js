@@ -20,7 +20,7 @@ function App() {
 					<>
 					<Nav />
 					<div className="page-area">
-						<WelcomePage />
+							<WelcomePage />
 					</div>
 					</>
 				)}
@@ -30,7 +30,7 @@ function App() {
 				path="/begin-proposal"
 				render={() => (
 					<>
-					<Nav />
+										<Nav />
 					<div className="page-area">
 						<BeginInitiative />
 					</div>
@@ -42,7 +42,7 @@ function App() {
 				path="/research"
 				render={() => (
 					<>
-					<Nav />
+										<Nav />
 					<div className="page-area">
 						<Research />
 					</div>
@@ -54,7 +54,7 @@ function App() {
 				path="/signup"
 				render={() => (
 					<>
-					<Nav />
+										<Nav />
 					<div className="page-area">
 						<Signup />
 					</div>
@@ -66,7 +66,7 @@ function App() {
 				path="/login"
 				render={() => (
 					<>
-					<Nav />
+										<Nav />
 					<div className="page-area">
 						<Login />
 					</div>
@@ -78,7 +78,7 @@ function App() {
 				path="/proposal"
 				render={() => (
 					<>
-					<Nav />
+										<Nav />
 					<div className="page-area">
 						<div className="proposal">
 							<StepTracker />
