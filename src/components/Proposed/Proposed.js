@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import { query } from 'gql-query-builder';
 import './Proposed.css';
+import InitiativeCard from '../InitiativeCard/InitiativeCard';
 
 const Proposed = () => {
 
@@ -22,9 +23,19 @@ const Proposed = () => {
   
   getProposedBallots();
 
+//  const officialCards = ballots.map((ballot) => {
+//    return (
+//      <InitiativeCard
+//        {...ballot} key={ballot.id} />
+//      );
+//    });
+//    return <div className="official-cards">{officialCards}</div>;
+//  }; 
+
   return (
       <div className="Official">
-        <h1>This will hold our proposed initiatives</h1>
+        <h1>Proposed Initiatives:</h1>
+        <InitiativeCard />
         {/* <h1>{this.state.data}</h1> */}
       </div>
     );
