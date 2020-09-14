@@ -4,8 +4,7 @@ import "./Nav.css";
 import logo from "./logo.png";
 
 function Nav() {
-  const [loggedIn, setLoggedIn] = useState(true)
- 
+  const [loggedIn, setLoggedIn] = useState(false)
 
 	const logOut = (event) => {
     event.preventDefault()
@@ -25,7 +24,7 @@ function Nav() {
 					<img src={logo} alt="logo" className="logo" />
 				</NavLink>
 				<div className="signup-login">
-					{loggedIn === true ? 
+					{loggedIn === true ? (
 						<NavLink
 							to={"/"}
 							style={{ textDecoration: "none" }}
@@ -33,7 +32,7 @@ function Nav() {
 						>
 							Logout
 						</NavLink>
-					 : 
+           ) : (
 						<div className="signup-login">
 							<NavLink to={"/signup"} style={{ textDecoration: "none" }}>
 								Signup
@@ -42,7 +41,7 @@ function Nav() {
 								Login
 							</NavLink>
 						</div>
-					}
+           )}
 				</div>
 			</header>
 		</div>

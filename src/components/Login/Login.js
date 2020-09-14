@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
-import { query } from 'gql-query-builder'
+import { query, mutation } from 'gql-query-builder'
+import "./Login.css";
 
 // Component
 class Login extends Component {
@@ -12,8 +13,8 @@ class Login extends Component {
     super(props)
 
     this.state = {
+      token: "",
       error: '',
-      isLoading: false,
       user: {
         email: '',
         password: '',
@@ -26,14 +27,17 @@ class Login extends Component {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
       operation: 'userLogin',
       variables: details,
-      fields: [{ user : ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']}]
+      fields: ['token', { user : ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']}]
     })).then(
       response => {
         console.log(response.data.data.userLogin.user)
+        console.log(response.data.data.userLogin.token)
         this.setState({
-          user: response.data.data.userLogin.user
+          user: response.data.data.userLogin.user,
+          token: response.data.data.userLogin.token
         })
         localStorage.setItem("user", JSON.stringify(this.state.user))
+        localStorage.setItem("token", response.data.data.userLogin.token)
         localStorage.setItem('loggedIn', true)
       }
     ).catch(error => {
@@ -41,34 +45,52 @@ class Login extends Component {
     })
   }
 
-  setUser = (userId) => {
-    return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+  // setUser = (userId) => {
+  //   return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+  //     operation: 'user',
+  //     variables: {id: userId},
+  //     fields: ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']
+  //   })).then(
+  //     response => {
+  //       console.log(response.data.data.user)
+  //       this.setState({
+  //         user: response.data.data.user
+  //       })
+  //       localStorage.setItem("user", this.state.user)
+  //     }
+  //   ).catch(error => {
+  //     console.log(error);
+  //   })
+  // }
+
+  updateUser = (userId, token) => {
+    axios.defaults.headers.common['Authorization'] = this.state.token
+    return axios.post('https://initiate-co-backend.herokuapp.com/', mutation({
       operation: 'user',
       variables: {id: userId},
-      fields: ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']
+      fields: ['name']
+    }, {
+      headers: {
+        'Authorization' : `${token}`
+      }
     })).then(
       response => {
-        console.log(response.data.data.user)
-        this.setState({
-          user: response.data.data.user
-        })
-        localStorage.setItem("user", this.state.user)
+        console.log(response)
       }
     ).catch(error => {
       console.log(error);
     })
   }
 
+  onUpdate = (event) => {
+    event.preventDefault()
+    this.updateUser(4, this.state.token)
+  }
+
 
   onLogin = (event) => {
     event.preventDefault()
-
-    this.setState({
-      isLoading: true
-    })
-
     this.login(this.state.user)
-    localStorage.setItem('loggedIn', true)
     this.props.history.push('/')
   }
   
@@ -76,7 +98,6 @@ class Login extends Component {
   onChange = (event) => {
     let user = this.state.user
     user[event.target.name] = event.target.value
-
     this.setState({
       user
     })
@@ -85,10 +106,15 @@ class Login extends Component {
 
   render() {
     return (
+        <div className="login">
           <form >
-            <div style={{ width: '25em', margin: '0 auto' }}>
+              {/* <button type="submit" theme="secondary" onClick={this.onUpdate}>
+                Update Test
+              </button> */}
+            <div className="login-form" style={{ width: '25em', margin: '0 auto' }}>
               {/* Email */}
               <input
+                className="login-input"
                 type="email"
                 placeholder="Email"
                 required="required"
@@ -100,6 +126,7 @@ class Login extends Component {
 
               {/* Password */}
               <input
+                className="login-input"
                 type="password"
                 placeholder="Password"
                 required="required"
@@ -108,15 +135,15 @@ class Login extends Component {
                 onChange={this.onChange}
                 style={{ marginTop: '1em' }}
               />
-            </div>
-
             <div style={{ marginTop: '2em' }}>
               {/* Form submit */}
-              <button type="submit" theme="secondary" onClick={this.onLogin}>
+              <button className="login-button" type="submit" theme="secondary" onClick={this.onLogin}>
                 Login
               </button>
             </div>
+            </div>
           </form>
+          </div>
   )  
 }
 }

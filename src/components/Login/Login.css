@@ -1,4 +1,4 @@
-.signup {
+.login {
   background-color: #EAEAEA;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   overflow-y: scroll;
 }
 
-.signup-form {
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,14 +22,14 @@
   font-size: large;
 }
 
-.signup-input, .signup-button {
+.login-input, .login-button {
   width: 50vw;
   height: 10vh;
   font-size: xx-large;
   border-radius: 3px;
 }
 
-.signup-button {
+.login-button {
   height: 6vh;
   width: 40vw;
 }

@@ -20,7 +20,7 @@ function App() {
 					<>
 					<Nav />
 					<div className="page-area">
-						<WelcomePage />
+							<WelcomePage />
 					</div>
 					</>
 				)}
