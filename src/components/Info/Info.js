@@ -22,8 +22,6 @@ import StepFourteen from "../steps/StepFourteen";
 
 const Info = ({ ProposalStep }) => {
 	let step = ProposalStep.initiativeStepReducer
-
-	console.log(step)
 	if (step > 14) {
 		step = 0
 		localStorage.setItem('savedUserStep', 1)
