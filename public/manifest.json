@@ -4,13 +4,13 @@
   "description": "Colorado state ballot initiative guide",
   "icons": [
     {
-      "src": "./logo.svg",
-      "type": "image/svg",
+      "src": "/Users/cwefso/turing/module4/projects/initiate-co/initiate-co-ui/android-chrome-192x192.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./logo.svg",
-      "type": "image/svg",
+      "src": "/Users/cwefso/turing/module4/projects/initiate-co/initiate-co-ui/android-chrome-512x512.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
