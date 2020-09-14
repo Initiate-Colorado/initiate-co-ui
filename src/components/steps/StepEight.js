@@ -2,12 +2,13 @@ import React from "react";
 import { connect } from 'react-redux';
 
 const StepEight = ({ProposalStep, handleIncrementClick, handleDecrementClick}) => {
+  const step = ProposalStep.initiativeStepReducer
 
 	return (
     <section className="step-eight">
       			<div className="step-title">
 
-      <h1>Step {ProposalStep}: Appeals of Title Board Decisions </h1>
+      <h1>Step {step}: Appeals of Title Board Decisions </h1>
             </div>
             <div className={"step-text"}>
       <p>Anyone who is dissatisfied with the Title Board's action at a rehearing may file an appeal with the Colorado Supreme Court.  The Court is required to act on the appeal promptly when an appeal is filed within five days of receiving the required documentation from the Secretary of State.  The Court usually either affirms the action of the Title Board or reverses it, in which case the Court remands the case to the Title Board with instructions, pointing out where the Title Board erred.</p>

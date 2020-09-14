@@ -20,11 +20,12 @@ import StepThirteen from "../steps/StepThirteen";
 import StepFourteen from "../steps/StepFourteen";
 
 
-const Info = ({ ProposalStep}) => {
+const Info = ({ ProposalStep }) => {
+	let step = ProposalStep.initiativeStepReducer
 
-
-	if (ProposalStep > 14) {
-		ProposalStep = 0
+	console.log(step)
+	if (step > 14) {
+		step = 0
 		localStorage.setItem('savedUserStep', 1)
 	}
 
@@ -42,29 +43,27 @@ const Info = ({ ProposalStep}) => {
       })
 	}
 
-	getSteps(ProposalStep)
+	getSteps(step)
 
 	return (
 		<section className="info">
 			<div className="steps">
-
-
-      {ProposalStep === 0 && <BeginInitiative />}
-			{ProposalStep === 1 && <StepOne />}
-			{ProposalStep === 2 && <StepTwo />}
-			{ProposalStep === 3 && <StepThree />}
-			{ProposalStep === 4 && <StepFour />}
-			{ProposalStep === 5 && <StepFive />}
-			{ProposalStep === 6 && <StepSix />}
-			{ProposalStep === 7 && <StepSeven />}
-			{ProposalStep === 8 && <StepEight />}
-			{ProposalStep === 9 && <StepNine />}
-			{ProposalStep === 10 && <StepTen />}
-			{ProposalStep === 11 && <StepEleven />}
-			{ProposalStep === 12 && <StepTwelve />}
-			{ProposalStep === 13 && <StepThirteen />}
-			{ProposalStep === 14 && <StepFourteen />}
-			{ProposalStep > 14 && { ProposalStep : 0 } &&<BeginInitiative />}
+      {step === 0 && <BeginInitiative />}
+			{step === 1 && <StepOne />}
+			{step === 2 && <StepTwo />}
+			{step === 3 && <StepThree />}
+			{step === 4 && <StepFour />}
+			{step === 5 && <StepFive />}
+			{step === 6 && <StepSix />}
+			{step === 7 && <StepSeven />}
+			{step === 8 && <StepEight />}
+			{step === 9 && <StepNine />}
+			{step === 10 && <StepTen />}
+			{step === 11 && <StepEleven />}
+			{step === 12 && <StepTwelve />}
+			{step === 13 && <StepThirteen />}
+			{step === 14 && <StepFourteen />}
+			{step > 14 && { step : 0 } &&<BeginInitiative />}
 			</div>
 		</section>
 	);

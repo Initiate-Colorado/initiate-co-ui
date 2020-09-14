@@ -38,7 +38,7 @@ class Login extends Component {
         })
         localStorage.setItem("user", JSON.stringify(this.state.user))
         localStorage.setItem("token", response.data.data.userLogin.token)
-        localStorage.setItem('loggedIn', true)
+        this.props.handleLogin()
       }
     ).catch(error => {
       console.log(error);
@@ -91,7 +91,7 @@ class Login extends Component {
   onLogin = (event) => {
     event.preventDefault()
     this.login(this.state.user)
-    this.props.history.push('/')
+    localStorage.setItem('loggedIn', true)
   }
   
 
@@ -147,7 +147,16 @@ class Login extends Component {
   )  
 }
 }
+const mapStateToProps = (state) => {
+	return {
+		ProposalStep: state,
+	};
+};
 
-// Component Properties
+const mapDispatchToProps = (dispatch) => {
+	return {
+		handleLogin: () => dispatch({ type: "LOGIN" }),
+	};
+};
 
-export default connect(null, )(withRouter(Login))
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

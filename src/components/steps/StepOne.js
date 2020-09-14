@@ -5,6 +5,7 @@ class StepOne extends Component {
 	constructor({ ProposalStep, handleIncrementClick, handleDecrementClick }) {
 		super({ ProposalStep, handleIncrementClick, handleDecrementClick });
 		this.state = {
+			step: ProposalStep.initiativeStepReducer,
 			error: "",
 			ballot: {
 				title: "",
@@ -60,7 +61,7 @@ class StepOne extends Component {
 		return (
 			<section className="step-one">
 				<div className="step-title">
-					<h1>Step {this.props.ProposalStep}: Submission of a Proposal</h1>
+					<h1>Step {this.state.step}: Submission of a Proposal</h1>
 				</div>
 				<div className="step-text">
 					<p>What do you want to call this initiative?</p>

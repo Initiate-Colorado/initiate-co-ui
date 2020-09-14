@@ -6,7 +6,7 @@ import "./StepTracker.css";
 
 const StepTracker = ({
 	ProposalStep,
-}) => (
+}) =>
 	<div className="step-tracker">
 		<Stepper
 			styleConfig={{
@@ -35,10 +35,9 @@ const StepTracker = ({
 				{ label: "Protesting the Secretary of State's Determination" },
 				{ label: "Placement on Ballot" },
 			]}
-			activeStep={!ProposalStep > 14 ? 1 : ProposalStep - 1}
+			activeStep={!ProposalStep.initiativeStepReducer > 14 ? 1 : ProposalStep.initiativeStepReducer - 1}
 		/>
 	</div>
-);
 
 const mapStateToProps = (state) => {
 	return {
