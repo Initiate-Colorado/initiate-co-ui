@@ -10,7 +10,7 @@ const Official = () => {
   const getOfficialBallots = () => {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
       operation: 'ballots',
-      fields: [{ ballots: ['id', 'title']}]
+      fields: [{ ballots: ['id', 'subject', 'description', 'representative']}]
     })).then(
       response => {
         console.log(response.data.data.ballots)
