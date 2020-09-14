@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { query, mutation } from 'gql-query-builder'
+import "./Signup.css";
 
 // Component
 class Signup extends Component {
@@ -19,7 +20,7 @@ class Signup extends Component {
         email: '',
         password: '',
       },
-      id: null
+      id: 0
     }
   }
 
@@ -36,7 +37,7 @@ class Signup extends Component {
           })
           this.setUser(this.state.id)
         }
-      ).catch(function (error) {
+      ).catch(error => {
         console.log(error);
       })
   }
@@ -79,24 +80,27 @@ class Signup extends Component {
 
     this.register(this.state.user)
     localStorage.setItem('loggedIn', true)
-    this.props.history.push('/')
   }
 
   render() {
     return (
+      <div className="signup">
           <form >
-            <div style={{ width: '25em', margin: '0 auto' }}>
+            <div className="signup-form" style={{ width: '25em', margin: '0 auto' }}>
               {/* Name */}
               <input
+                className="signup-input"
                 type="text"
+                required="required"
                 placeholder="Name"
                 name="name"
                 value={this.state.user.name}
                 onChange={this.onChange}
+                style={{ marginTop: '1em' }}
               />
-
               {/* Email */}
               <input
+                              className="signup-input"
                 type="email"
                 placeholder="Email"
                 required="required"
@@ -105,9 +109,9 @@ class Signup extends Component {
                 onChange={this.onChange}
                 style={{ marginTop: '1em' }}
               />
-
               {/* Password */}
               <input
+                              className="signup-input"
                 type="password"
                 placeholder="Password"
                 required="required"
@@ -116,15 +120,15 @@ class Signup extends Component {
                 onChange={this.onChange}
                 style={{ marginTop: '1em' }}
               />
-            </div>
-
             <div style={{ marginTop: '2em' }}>
               {/* Form submit */}
-              <button type="submit" theme="secondary" disabled={this.state.isLoading} onClick={this.onSubmit}>
+              <button className="signup-button" type="submit" theme="secondary" disabled={this.state.isLoading} onClick={this.onSubmit}>
                 Signup
               </button>
             </div>
-          </form>
+            </div>
+          </form>      
+      </div>
   )  
 }
 }

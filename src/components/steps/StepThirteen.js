@@ -6,11 +6,14 @@ const StepThirteen = ({
 	handleIncrementClick,
 	handleDecrementClick,
 }) => {
+
+	const step = ProposalStep.initiativeStepReducer
+
 	return (
 		<section className="step-thirteen">
 			<div className="step-title">
 				<h1>
-					Step {ProposalStep}: Protesting the Secretary of State's Determination{" "}
+					Step {step}: Protesting the Secretary of State's Determination{" "}
 				</h1>
 			</div>
 			<div className={"step-text"}>
