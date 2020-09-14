@@ -3,13 +3,14 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import { query } from 'gql-query-builder';
 import './Proposed.css';
+import InitiativeCard from '../InitiativeCard/InitiativeCard';
 
 const Proposed = () => {
 
   const getProposedBallots = () =>  {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
-      operation: 'ballots',
-      fields: ['id']
+      operation: 'proposedBallots',
+      fields: [{ ballots: ['id', 'subject', 'description', 'representative']}]
     })).then(
       response => {
         console.log(response.data.data.ballots)
@@ -22,9 +23,19 @@ const Proposed = () => {
   
   getProposedBallots();
 
+//  const officialCards = ballots.map((ballot) => {
+//    return (
+//      <InitiativeCard
+//        {...ballot} key={ballot.id} />
+//      );
+//    });
+//    return <div className="official-cards">{officialCards}</div>;
+//  }; 
+
   return (
-      <div className="Proposed">
-        <h1>This will hold our proposed initiatives</h1>
+      <div className="Official">
+        <h1>Proposed Initiatives:</h1>
+        <InitiativeCard />
         {/* <h1>{this.state.data}</h1> */}
       </div>
     );

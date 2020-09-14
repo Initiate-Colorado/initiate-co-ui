@@ -4,7 +4,8 @@ import Official from '../Official/Official';
 import Proposed from '../Proposed/Proposed';
 
 
-function InitiativeContainer() {
+
+const InitiativeContainer = ({ ballots }) => {
   return (
     <div className="InitiativeContainer">
       <Official />
