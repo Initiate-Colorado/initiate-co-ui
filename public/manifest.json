@@ -1,22 +1,26 @@
 {
   "short_name": "Initiate CO",
   "name": "Initiate Colorado",
-  "description": "Colorado state ballot initiative guide",
   "icons": [
     {
-      "src": "./src/logo.svg",
-      "type": "image/svg",
-      "sizes": "192x192"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
     },
     {
-      "src": "./src/logo.svg",
-      "type": "image/svg",
-      "sizes": "512x512"
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": "/?source=pwa",
-  "background_color": "#DD6E42",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#DD6E42"
+  "start_url": "https://initiate-co-app.herokuapp.com/",
+  "display": "fullscreen"
 }

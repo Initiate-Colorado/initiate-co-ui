@@ -5,6 +5,7 @@ class StepFive extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
+			step: this.props.ProposalStep.initiativeStepReducer,
 			error: "",
 			ballot: {
 				title: "",
@@ -48,9 +49,10 @@ class StepFive extends Component {
 
 	render(){
 	return (
+
 		<section className="step-five">
 						<div className="step-title">
-			<h1>Step {this.props.ProposalStep}: Title Setting</h1>
+			<h1>Step {this.state.step}: Title Setting</h1>
 			</div>
 			<div className={"step-text"}>
 			<p>

@@ -23,7 +23,7 @@ const Proposed = () => {
   getProposedBallots();
 
   return (
-      <div className="Official">
+      <div className="Proposed">
         <h1>This will hold our proposed initiatives</h1>
         {/* <h1>{this.state.data}</h1> */}
       </div>
