@@ -6,14 +6,6 @@
     {
       "src": "public/logo.png",
       "type": "image/png",
-      "sizes": "128x128"
-    },{          
-      "src": "public/logo.png",
-      "type": "image/png",
-      "sizes": "144x144"
-    },{
-      "src": "public/logo.png",
-      "type": "image/png",
       "sizes": "192x192"
     },{
       "src": "public/logo.png",
