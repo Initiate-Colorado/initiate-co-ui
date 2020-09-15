@@ -13,7 +13,7 @@ const Proposed = () => {
       fields: ['id', 'subject', 'description', 'representative', 'title']
     })).then(
       response => {
-        console.log(response.data.data.ballots)
+        // console.log(response.data.data.ballots)
         }
       ).catch(function (error) {
         console.log(error);
@@ -33,7 +33,7 @@ const Proposed = () => {
 //  }; 
 
   return (
-      <div className="Official">
+      <div className="Proposed">
         <h1>Proposed Initiatives:</h1>
         <InitiativeCard />
         {/* <h1>{this.state.data}</h1> */}

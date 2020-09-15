@@ -7,23 +7,6 @@ import './Official.css';
 
 
 const Official = () => {
-  // let ballots;
-
-  // const getOfficialBallots = () => {
-  //   return axios.post('https://initiate-co-backend.herokuapp.com/', query({
-  //     operation: 'ballots',
-  //     fields: [{ ballots: ['id', 'subject', 'description', 'representative']}]
-  //   })).then(
-  //     response => {
-  //       console.log(response.data.data.ballots)
-  //       // ballots = response.data.data.ballots
-  //       // console.log(ballots)
-  //       }
-  //     ).catch(function (error) {
-  //       console.log(error);
-  //     }
-  //   )
-  // }
 
   const [ballots, setBallots] = useState([])
 
@@ -33,7 +16,7 @@ const Official = () => {
       fields: ['id', 'subject', 'description', 'representative', 'title', 'representativeAddress', 'corepresentative', 'corepresentativeAddress', 'ballotNumber']
     })).then(
       response => {
-        // console.log(response.data.data.ballots)
+        console.log(response.data.data.ballots)
         setBallots(response.data.data.ballots)
         }
       ).catch(function (error) {
@@ -45,10 +28,11 @@ const Official = () => {
  useEffect(() => { getOfficialBallots() }, [] );
 
  const displayBallots = (ballots) => {
+
      const officialCards = ballots.map((ballot) => {
        return (
         <InitiativeCard
-          {... ballot }/>
+           ballot = {ballot} />
        );
    });
    return <div className="official-cards">{officialCards}</div>;
@@ -57,7 +41,7 @@ const Official = () => {
   return (
       <div className="Official">
         <h1>Official Initiatives:</h1>
-        {displayBallots}
+        {displayBallots(ballots)}
       </div>
     );
 } 
