@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './InitiativeCard.css';
 
-class InitiativeCard extends Component  {
-  constructor(props){
-    super(props)
-    this.state = {
-      ballot : this.props.ballot
-    }
-  }
+const InitiativeCard = ({ ballotDetails }) => {
 
-
-  render() {
-    // const { ballot } = this.props
-    // console.log('ballot', ballot)
-    // console.log('state', this.state)
-    console.log(this.state.ballot)
+    const [ballot, setBallot] = useState({})
+    useEffect(() => {
+      if (ballotDetails !== undefined){
+      console.log(Object.keys(ballotDetails))
+      setBallot(ballotDetails)
+      }
+    }, [ballotDetails])
     // console.log('props', this.props)
     return (
     <div className="InitiativeCard">
@@ -23,12 +18,12 @@ class InitiativeCard extends Component  {
         <p>Only a citizen of the United State who has attained the age of eighteen years,
         has resided in this state for such time as may be prescribed by law, and has been duly
         registered as a voter if required by law shall be qualified to vote at all elections.</p> */}
-        <h1>Representative: </h1>
-        <h2>{this.state.ballotNumber}</h2>
-        <p>{this.props.title}</p>
+        <h1>{ballot.title}</h1>
+        <h2>{ballot.ballotNumber}</h2> 
+        <p>Representative: {ballot.representative} </p>
     </div>
   );
 }
-}
+
 
 export default InitiativeCard;

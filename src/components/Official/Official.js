@@ -10,7 +10,6 @@ const Official = () => {
 
   const [ballots, setBallots] = useState([])
 
-  const [ballots, setBallots] = useState([])
 
   const getOfficialBallots = () => {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
@@ -18,7 +17,7 @@ const Official = () => {
       fields: ['id', 'subject', 'description', 'representative', 'title', 'representativeAddress', 'corepresentative', 'corepresentativeAddress', 'ballotNumber']
     })).then(
       response => {
-        console.log(response.data.data.ballots)
+        // console.log(response.data.data.ballots)
         setBallots(response.data.data.ballots)
         }
       ).catch(function (error) {
@@ -34,7 +33,7 @@ const Official = () => {
      const officialCards = ballots.map((ballot) => {
        return (
         <InitiativeCard
-           ballot = {ballot} />
+           ballotDetails = {ballot} />
        );
    });
    return <div className="official-cards">{officialCards}</div>;
