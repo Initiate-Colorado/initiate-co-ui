@@ -23,7 +23,7 @@ describe('Proposed', () => {
         <Proposed />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('This will hold our proposed initiatives');
+    const optionText = getByText('Proposed Initiatives:');
     expect(optionText).toBeInTheDocument();
   });  
 });

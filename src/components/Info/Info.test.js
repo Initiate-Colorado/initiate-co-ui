@@ -16,13 +16,13 @@ describe('Info', () => {
   })   
 
   it('Should render the Info component', () => {
-    const { getByText } = render(
+    const { getByTestId } = render(
     <Provider store = { store }>
       <MemoryRouter>
         <Info />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Congratulations on taking the first step towards proposing a ballot initiative!');
+    const optionText = getByTestId('info-section');
     expect(optionText).toBeInTheDocument();
   });
 })

@@ -23,7 +23,7 @@ describe('StepFourteen', () => {
         <StepFourteen />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step 0: Placement on Ballot');
+    const optionText = getByText('Step : Placement on Ballot');
     expect(optionText).toBeInTheDocument();
   });  
 });  

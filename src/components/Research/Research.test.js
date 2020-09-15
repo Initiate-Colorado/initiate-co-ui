@@ -23,7 +23,7 @@ describe('Research', () => {
         <Research />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('This will hold our official initiatives');
+    const optionText = getByText('Official Initiatives:');
     expect(optionText).toBeInTheDocument();
   });  
 });

@@ -23,7 +23,7 @@ describe('StepOne', () => {
           <StepOne />
         </MemoryRouter>
       </Provider>);
-    const optionText = getByText('Step 0: Submission of a Proposal');
+    const optionText = getByText('Step : Submission of a Proposal');
     expect(optionText).toBeInTheDocument();
   });  
 
@@ -36,16 +36,10 @@ describe('StepOne', () => {
       </Provider>);
     const proposalInput = getByPlaceholderText('Enter the plain text of your proposal here')
     const nameInput = getByPlaceholderText('Person One Name')
-    const phoneInput = getByPlaceholderText('Person One Phone')
-    const emailInput = getByPlaceholderText('Person One Email')
     fireEvent.change(proposalInput, { target: { value: 'test proposal'}})
     fireEvent.change(nameInput, { target: { value: 'test name'}})
-    fireEvent.change(phoneInput, { target: { value: 'test phone'}})
-    fireEvent.change(emailInput, { target: { value: 'test email'}})
     expect(proposalInput).toBeInTheDocument()
     expect(nameInput).toBeInTheDocument()
-    expect(phoneInput).toBeInTheDocument()
-    expect(emailInput).toBeInTheDocument()
   });
   
 

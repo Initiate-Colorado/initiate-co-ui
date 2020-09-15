@@ -23,7 +23,7 @@ describe('StepThirteen', () => {
         <StepThirteen />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText("Step 0: Protesting the Secretary of State's Determination");
+    const optionText = getByText("Step : Protesting the Secretary of State's Determination");
     expect(optionText).toBeInTheDocument();
   });  
 });  

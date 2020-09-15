@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios'
 import { connect } from "react-redux";
 import { query } from 'gql-query-builder';
@@ -10,6 +10,24 @@ const Official = () => {
 
   // let ballots;
 
+  // const getOfficialBallots = () => {
+  //   return axios.post('https://initiate-co-backend.herokuapp.com/', query({
+  //     operation: 'ballots',
+  //     fields: [{ ballots: ['id', 'subject', 'description', 'representative']}]
+  //   })).then(
+  //     response => {
+  //       console.log(response.data.data.ballots)
+  //       // ballots = response.data.data.ballots
+  //       // console.log(ballots)
+  //       }
+  //     ).catch(function (error) {
+  //       console.log(error);
+  //     }
+  //   )
+  // }
+
+  const [ballots, setBallots] = useState([])
+
   const getOfficialBallots = () => {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
       operation: 'ballots',
@@ -17,8 +35,9 @@ const Official = () => {
     })).then(
       response => {
         console.log(response.data.data.ballots)
-        // ballots = response.data.data.ballots
+        // fetchedBallots = response.data.data.ballots
         // console.log(ballots)
+        // setBallots(fetchedBallots)
         }
       ).catch(function (error) {
         console.log(error);

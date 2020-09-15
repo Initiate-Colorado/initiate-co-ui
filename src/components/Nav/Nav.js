@@ -42,7 +42,7 @@ class Nav extends Component {
 				/>
 				<header className="Nav-header">
 					<NavLink to={"/"}>
-						<img src={logo} alt="logo" className="logo" />
+						<img src={logo} alt="logo" className="logo" data-testid="logo" />
 					</NavLink>
 					<div className="signup-login">
 						{this.state.loggedIn === true &&
