@@ -82,10 +82,8 @@ class StepThree extends Component {
 				72 hours of the proposal's submission.
 			</p>
 			</div>
-			<h3>Last Day for Submitting Revised Proposal: March 20, 2020</h3>
 			<h3>
-				Last Day for Review and Comment Meeting on Revised Proposal: April 3,
-				2020
+				Last Day for Review and Comment Meeting on Revised Proposal: {this.props.ballotProcess.dueDate}
 			</h3>
 			<div className="buttons">
 				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>

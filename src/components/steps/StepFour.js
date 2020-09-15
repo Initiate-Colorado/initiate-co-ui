@@ -34,7 +34,7 @@ const StepFour = ({ ballotProcess, ProposalStep, handleIncrementClick, handleDec
 				before a meeting.
 			</p>
 			</div>
-			<h3>Last Day for Filing: April 3, 2020</h3>
+			<h3>Last Day for Filing: {ballotProcess.dueDate}</h3>
 			<div className="buttons">
 				<button data-testid="research-button" onClick={handleDecrementClick}>
 					Go Back

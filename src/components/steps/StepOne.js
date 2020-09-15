@@ -58,7 +58,6 @@ class StepOne extends Component {
 	};
 
 	render() {
-		console.log(this.props.ballotProcess)
 		return (
 			<section className="step-one">
 				<div className="step-title">
@@ -153,7 +152,7 @@ class StepOne extends Component {
 					of the proposal. A proponent can withdraw a proposal at any time.
 				</p>
 				<div className="deadline">
-					<h3>Submission Deadline: March 20, 2020</h3>
+					<h3>Submission Deadline: {this.props.ballotProcess.dueDate}</h3>
 				</div>
 				<div className="buttons">
 					<button

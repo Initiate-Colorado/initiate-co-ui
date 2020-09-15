@@ -110,7 +110,7 @@ class StepFive extends Component {
 					/>
 			<button onClick={this.submitProgress}>Save</button>
 			</div>
-			<h3>Last Title Board for 2020: April 15, 2020</h3>
+			<h3>Last Title Board for 2020: {this.props.ballotProcess.dueDate}</h3>
 			<div className="buttons">
 				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
 					Go Back

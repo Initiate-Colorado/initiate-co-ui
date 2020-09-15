@@ -25,7 +25,9 @@ const Info = ({ ProposalStep }) => {
 	let step = ProposalStep.initiativeStepReducer
 
 	useEffect(() => {
-		getSteps(step)
+		if(step < 15){
+			getSteps(step)
+		}
 	}, [step])
 
 	const [ballotProcess, setBallotProcess] = useState({})

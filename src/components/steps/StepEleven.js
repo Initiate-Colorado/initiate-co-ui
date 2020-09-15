@@ -33,8 +33,7 @@ const StepEleven = ({
 			</p>
       </div>
 			<h3>
-				Last day for the Secretary of State to determine valid signatures for
-				2020 election: September 2, 2020
+				Last day for the Secretary of State to determine valid signatures: {ballotProcess.dueDate}
 			</h3>
 
 			<div className="buttons">

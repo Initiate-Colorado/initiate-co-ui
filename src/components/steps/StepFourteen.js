@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { NavLink } from 'react-router-dom';
 
 const StepFourteen = ({ ballotProcess, handleReset, handleDecrementClick }) => {
 
@@ -14,13 +15,15 @@ const StepFourteen = ({ ballotProcess, handleReset, handleDecrementClick }) => {
 					statements of sufficiency are issued.
 				</p>
 			</div>
-			<button
-				className="done-button"
+			<NavLink
+				to={"/"}
+				className="done-NavLink"
 				data-testid="research-button"
+				style={{ textDecoration: "none", color: "black" }}
 				onClick={handleReset}
 			>
 				CONGRATS!!
-			</button>
+			</NavLink>
 			<div className="buttons">
 				<button data-testid="research-button" onClick={handleDecrementClick}>
 					Go Back

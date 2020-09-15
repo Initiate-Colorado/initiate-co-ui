@@ -32,7 +32,7 @@ const StepSeven = ({ballotProcess, handleIncrementClick, handleDecrementClick })
 				abstract does not comply with statutory requirements.
 			</p>
 			</div>
-			<h3>Last Title Board meeting for rehearings for 2020: April 24, 2020</h3>
+			<h3>Last Title Board meeting for rehearings for 2020: {ballotProcess.dueDate}</h3>
 
 			<div className="buttons">
 				<button data-testid="research-button" onClick={handleDecrementClick}>
