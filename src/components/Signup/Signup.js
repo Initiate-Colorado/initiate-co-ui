@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import { query, mutation } from 'gql-query-builder'
 import "./Signup.css";
+import { NavLink } from 'react-router-dom';
 
 // Component
 class Signup extends Component {
@@ -13,8 +14,6 @@ class Signup extends Component {
     super(props)
 
     this.state = {
-      error: '',
-      isLoading: false,
       user: {
         name: '',
         email: '',
@@ -35,49 +34,48 @@ class Signup extends Component {
           this.setState({
             id: response.data.data.userSignup.id
           })
-          this.setUser(this.state.id)
+          this.login(this.state.user)
         }
       ).catch(error => {
         console.log(error);
       })
   }
 
-  setUser = (userId) => {
+  login = (details) => {  
+  const user = {
+      email: details.email,
+      password: details.password 
+    }
+    console.log(details)
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
-      operation: 'user',
-      variables: {id: userId},
-      fields: ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']
+      operation: 'userLogin',
+      variables: user,
+      fields: ['token', { user : ['name', 'id', 'email', 'password', 'createdAt', 'updatedAt', 'thirty_days_from', 'ballotTitle', 'ballotDescription']}]
     })).then(
       response => {
-        console.log(response.data.data.user)
+        console.log(response.data.data.userLogin.user)
+        console.log(response.data.data.userLogin.token)
         this.setState({
-          user: response.data.data.user
+          user: {...response.data.data.userLogin.user, token: response.data.data.userLogin.token}
         })
         localStorage.setItem("user", JSON.stringify(this.state.user))
-        this.props.history.push('/')
+        localStorage.setItem("token", response.data.data.userLogin.token)
+        this.props.handleLogin()
       }
     ).catch(error => {
       console.log(error);
     })
-  }
-  
+  }  
 
   onChange = (event) => {
     let user = this.state.user
     user[event.target.name] = event.target.value
-
     this.setState({
       user
     })
   }
 
-  onSubmit = (event) => {
-    event.preventDefault()
-
-    this.setState({
-      isLoading: true
-    })
-
+  onSubmit = () => {
     this.register(this.state.user)
     localStorage.setItem('loggedIn', true)
   }
@@ -85,7 +83,7 @@ class Signup extends Component {
   render() {
     return (
       <div className="signup">
-          <form >
+          <form>
             <div className="signup-form" style={{ width: '25em', margin: '0 auto' }}>
               {/* Name */}
               <input
@@ -111,7 +109,7 @@ class Signup extends Component {
               />
               {/* Password */}
               <input
-                              className="signup-input"
+                className="signup-input"
                 type="password"
                 placeholder="Password"
                 required="required"
@@ -122,9 +120,9 @@ class Signup extends Component {
               />
             <div style={{ marginTop: '2em' }}>
               {/* Form submit */}
-              <button className="signup-button" type="submit" theme="secondary" disabled={this.state.isLoading} onClick={this.onSubmit}>
-                Signup
-              </button>
+              <NavLink to = {"/proposal"} style={{ textDecoration: "none", color: 'black' }} onClick={this.onSubmit}>
+                            SIGN UP
+                </NavLink>
             </div>
             </div>
           </form>      
