@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { connect } from "react-redux";
 import { query } from 'gql-query-builder';
@@ -8,20 +8,17 @@ import './Official.css';
 
 const Official = () => {
 
-  // let ballots;
-
   const [ballots, setBallots] = useState([])
+
 
   const getOfficialBallots = () => {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
       operation: 'ballots',
-      fields: [{ ballots: ['id', 'subject', 'description', 'representative']}]
+      fields: ['id', 'subject', 'description', 'representative', 'title', 'representativeAddress', 'corepresentative', 'corepresentativeAddress', 'ballotNumber']
     })).then(
       response => {
-        console.log(response.data.data.ballots)
-        // fetchedBallots = response.data.data.ballots
-        // console.log(ballots)
-        // setBallots(fetchedBallots)
+        // console.log(response.data.data.ballots)
+        setBallots(response.data.data.ballots)
         }
       ).catch(function (error) {
         console.log(error);
@@ -29,24 +26,26 @@ const Official = () => {
     )
   }
 
-  getOfficialBallots();
+ useEffect(() => { getOfficialBallots() }, [] );
 
-//  const officialCards = ballots.map((ballot) => {
-//    return (
-//      <InitiativeCard
-//        {...ballot} key={ballot.id} />
-//      );
-//    });
-//    return <div className="official-cards">{officialCards}</div>;
-//  }; 
+ const displayBallots = (ballots) => {
+
+     const officialCards = ballots.map((ballot) => {
+       return (
+        <InitiativeCard
+           ballotDetails = {ballot} />
+       );
+   });
+   return <div className="official-cards">{officialCards}</div>;
+ }
 
   return (
       <div className="Official">
         <h1>Official Initiatives:</h1>
-        <InitiativeCard />  
+        {displayBallots(ballots)}
       </div>
     );
-};   
+} 
 
 const mapStateToProps = (state) => {
   return {

@@ -23,7 +23,7 @@ describe('StepFour', () => {
         <StepFour />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step 0: Filing with Secretary of State');
+    const optionText = getByText('Step : Filing with Secretary of State');
     expect(optionText).toBeInTheDocument();
   });  
 });  

@@ -55,7 +55,9 @@ const Info = ({ ProposalStep }) => {
 	}
 
 	return (
-		<section className="info">
+		<section 
+			className="info"
+			data-testid="info-section">
 			<div className="steps">
       {step === 0 && <BeginInitiative />}
 			{step === 1 && <StepOne ballotProcess={ballotProcess}/>}

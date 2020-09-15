@@ -23,7 +23,7 @@ describe('StepThree', () => {
         <StepThree />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step 0: Re-Submission of Revised Proposal');
+    const optionText = getByText('Step : Re-Submission of Revised Proposal');
     expect(optionText).toBeInTheDocument();
   }); 
   

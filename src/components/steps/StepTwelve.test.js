@@ -23,7 +23,7 @@ describe('StepTwelve', () => {
         <StepTwelve />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step 0: Curing an Insufficiency');
+    const optionText = getByText('Step : Curing an Insufficiency');
     expect(optionText).toBeInTheDocument();
   });  
 });  

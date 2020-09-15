@@ -23,7 +23,7 @@ describe('StepEleven', () => {
         <StepEleven />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step 0: Verification of Signatures');
+    const optionText = getByText('Step : Verification of Signatures');
     expect(optionText).toBeInTheDocument();
   });  
 });  
