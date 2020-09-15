@@ -34,7 +34,6 @@
 }
 
 .begin-initiative,
-.step-one, 
 .step-two,
 .step-three,
 .step-four,
@@ -53,6 +52,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  width: 57vw;
+  font-family: 'Raleway', sans-serif;
+}
+
+.step-one {
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   width: 57vw;
   font-family: 'Raleway', sans-serif;
@@ -118,11 +127,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: space-evenly;
     height: 100vh;
     width: 60vw;
     font-family: 'Raleway', sans-serif;
     padding-top: inherit;
+  }
+
+  .step-one {
+    justify-content: end;
   }
 
   .info {
