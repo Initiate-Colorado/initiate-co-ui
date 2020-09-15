@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const StepSeven = ({ ProposalStep, handleIncrementClick, handleDecrementClick }) => {
-	const step = ProposalStep.initiativeStepReducer
+const StepSeven = ({ballotProcess, handleIncrementClick, handleDecrementClick }) => {
 
 	return (
 		<section className="step-seven">
 			<div className="step-title">
-			<h1>Step {step}: Rehearings of Title Board Decisions</h1>
+			<h1>Step {ballotProcess.id}:{ballotProcess.title}</h1>
 			</div>
 			<div className={"step-text"}>
 			<p>
@@ -33,7 +32,7 @@ const StepSeven = ({ ProposalStep, handleIncrementClick, handleDecrementClick })
 				abstract does not comply with statutory requirements.
 			</p>
 			</div>
-			<h3>Last Title Board meeting for rehearings for 2020: April 24, 2020</h3>
+			<h3>Last Title Board meeting for rehearings for 2020: {ballotProcess.dueDate}</h3>
 
 			<div className="buttons">
 				<button data-testid="research-button" onClick={handleDecrementClick}>

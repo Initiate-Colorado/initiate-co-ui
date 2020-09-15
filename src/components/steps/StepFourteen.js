@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
+import { NavLink } from 'react-router-dom';
 
-const StepFourteen = ({ ProposalStep, handleReset, handleDecrementClick }) => {
-	const step = ProposalStep.initiativeStepReducer
-
+const StepFourteen = ({ ballotProcess, handleReset, handleDecrementClick }) => {
 
 	return (
 		<section className="step-fourteen">
 			<div className="step-title">
-				<h1>Step {step}: Placement on Ballot </h1>
+			<h1>Step {ballotProcess.id}:{ballotProcess.title}</h1>
 			</div>
 			<div className={"step-text"}>
 				<p>
@@ -16,13 +15,15 @@ const StepFourteen = ({ ProposalStep, handleReset, handleDecrementClick }) => {
 					statements of sufficiency are issued.
 				</p>
 			</div>
-			<button
-				className="done-button"
+			<NavLink
+				to={"/"}
+				className="done-NavLink"
 				data-testid="research-button"
+				style={{ textDecoration: "none", color: "black" }}
 				onClick={handleReset}
 			>
 				CONGRATS!!
-			</button>
+			</NavLink>
 			<div className="buttons">
 				<button data-testid="research-button" onClick={handleDecrementClick}>
 					Go Back

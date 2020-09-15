@@ -34,7 +34,6 @@
 }
 
 .begin-initiative,
-.step-one, 
 .step-two,
 .step-three,
 .step-four,
@@ -54,7 +53,17 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 60vw;
+  width: 57vw;
+  font-family: 'Raleway', sans-serif;
+}
+
+.step-one {
+  justify-content: end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 57vw;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -72,6 +81,10 @@
 
 .step-text {
   text-align: center;
+}
+
+.completed {
+  display: none
 }
 
 ::-webkit-scrollbar {
@@ -92,4 +105,47 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
   display: none;
+}
+
+@media screen and (max-width: 760px) {
+  .begin-initiative,
+  .step-one, 
+  .step-two,
+  .step-three,
+  .step-four,
+  .step-five,
+  .step-six,
+  .step-seven,
+  .step-eight,
+  .step-nine,
+  .step-ten,
+  .step-eleven,
+  .step-twelve,
+  .step-thirteen,
+  .step-fourteen
+   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 60vw;
+    font-family: 'Raleway', sans-serif;
+    padding-top: inherit;
+  }
+
+  .step-one {
+    justify-content: end;
+  }
+
+  .info {
+    background-color: #4F6D7A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+  }
 }

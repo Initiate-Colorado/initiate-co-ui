@@ -2,17 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 
 const StepEleven = ({
-	ProposalStep,
+	ballotProcess,
 	handleIncrementClick,
 	handleDecrementClick,
 }) => {
 
-	const step = ProposalStep.initiativeStepReducer
 	
 	return (
 		<section className="step-eleven">
 			<div className="step-title">
-				<h1>Step {step}: Verification of Signatures </h1>
+			<h1>Step {ballotProcess.id}:{ballotProcess.title}</h1>
 			</div>
       <div className={"step-text"}>
 			<p>
@@ -34,8 +33,7 @@ const StepEleven = ({
 			</p>
       </div>
 			<h3>
-				Last day for the Secretary of State to determine valid signatures for
-				2020 election: September 2, 2020
+				Last day for the Secretary of State to determine valid signatures: {ballotProcess.dueDate}
 			</h3>
 
 			<div className="buttons">

@@ -49,7 +49,7 @@ class StepThree extends Component {
 		return (
 		<section className="step-three">
 			<div className="step-title">
-			<h1>Step {this.state.step}: Re-Submission of Revised Proposal</h1>
+			<h1>Step {this.props.ballotProcess.id}:{this.props.ballotProcess.title}</h1>
 			</div>
 			<div className={"step-text"}>
 			<p>
@@ -82,10 +82,8 @@ class StepThree extends Component {
 				72 hours of the proposal's submission.
 			</p>
 			</div>
-			<h3>Last Day for Submitting Revised Proposal: March 20, 2020</h3>
 			<h3>
-				Last Day for Review and Comment Meeting on Revised Proposal: April 3,
-				2020
+				Last Day for Review and Comment Meeting on Revised Proposal: {this.props.ballotProcess.dueDate}
 			</h3>
 			<div className="buttons">
 				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
