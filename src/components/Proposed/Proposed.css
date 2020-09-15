@@ -1,7 +1,7 @@
 .Proposed {
   border: 1px black solid;
   border-radius: 5px;
-  margin: 2%;
   box-shadow: 2px 2px rgb(50, 68, 77);
+  padding: 1em;
   /* background-color: #FFFFFF; */
 }

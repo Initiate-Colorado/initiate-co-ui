@@ -10,7 +10,7 @@ const loggedInReducer = function (state = LoggedIn, action) {
 	switch (action.type) {
 		case "LOGIN":
 			localStorage.setItem('loggedIn', state)
-			return state;
+			return state = true;
 		case "LOGOUT":
 			return state = false;
 		case "CHECK":

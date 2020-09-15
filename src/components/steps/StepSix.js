@@ -49,10 +49,7 @@ class StepSix extends Component {
 		return (
 			<section className="step-six">
 							<div className="step-title">
-				<h1>
-					Step {this.state.step}: Revision of Proposal after Title Board
-					Meeting
-				</h1>
+				<h1>Step {this.props.ballotProcess.id}:{this.props.ballotProcess.title}</h1>
 				</div>
 				<div className={"step-text"}>
 				<p>

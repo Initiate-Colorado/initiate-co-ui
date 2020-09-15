@@ -22,5 +22,7 @@
     }
   ],
   "start_url": "https://initiate-co-app.herokuapp.com/",
-  "display": "fullscreen"
+  "display": "fullscreen",
+  "background_color": "#4F6D7A",
+  "theme_color": "#4F6D7A"
 }

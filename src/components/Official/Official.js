@@ -10,6 +10,8 @@ const Official = () => {
 
   const [ballots, setBallots] = useState([])
 
+  const [ballots, setBallots] = useState([])
+
   const getOfficialBallots = () => {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
       operation: 'ballots',

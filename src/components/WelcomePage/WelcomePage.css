@@ -21,3 +21,25 @@
 .cards {
   display: flex;
 }
+
+@media screen and (max-width: 760px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    height: 55vh;
+  }
+
+  .proposal-start, .research-start {
+    width: 50vw;
+    height: fit-content;
+    min-height: 22vh;
+    justify-content: flex-start;
+    border: 1px black solid;
+    padding: 0em;
+    border-radius: 5px;
+  }
+
+  .NavLink {
+    color: black;
+  }
+}
