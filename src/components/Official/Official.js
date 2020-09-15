@@ -31,13 +31,11 @@ const Official = () => {
   const getOfficialBallots = () => {
     return axios.post('https://initiate-co-backend.herokuapp.com/', query({
       operation: 'ballots',
-      fields: [{ ballots: ['id', 'subject', 'description', 'representative']}]
+      fields: ['id', 'subject', 'description', 'representative', 'title', 'representativeAddress', 'corepresentative', 'corepresentativeAddress', 'ballotNumber']
     })).then(
       response => {
         console.log(response.data.data.ballots)
-        // fetchedBallots = response.data.data.ballots
-        // console.log(ballots)
-        // setBallots(fetchedBallots)
+
         }
       ).catch(function (error) {
         console.log(error);
