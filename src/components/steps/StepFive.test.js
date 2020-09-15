@@ -10,6 +10,12 @@ import initiativeStepReducer from '../StepTracker/reducer';
 
 describe('StepFive', () => {
 
+  const ballotProcess = {
+    id: 5,
+    title: "Title Setting",
+    dueDate: "April 1"
+  }
+
   let store;
 
   beforeEach(() => {
@@ -20,10 +26,10 @@ describe('StepFive', () => {
     const { getByText } = render(
     <Provider store = { store }>
       <MemoryRouter>
-        <StepFive />
+        <StepFive ballotProcess={ballotProcess}/>
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step : Title Setting');
+    const optionText = getByText('Title Setting', {exact: false});
     expect(optionText).toBeInTheDocument();
   }); 
   
@@ -31,7 +37,7 @@ describe('StepFive', () => {
     const { getByPlaceholderText } = render(
       <Provider store = { store }>
         <MemoryRouter>
-          <StepFive />
+          <StepFive ballotProcess={ballotProcess}/>
         </MemoryRouter>
       </Provider>);
     const fiscalInput = getByPlaceholderText('Paste the fiscal impact abstract here')

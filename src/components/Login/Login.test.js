@@ -22,7 +22,7 @@ describe('Login', () => {
         <Login />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Login');
+    const optionText = getByText('LOG IN');
     expect(optionText).toBeInTheDocument();
   });
 })
