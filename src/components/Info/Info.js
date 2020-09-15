@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Info.css";
 import { connect } from "react-redux";
 import BeginInitiative from '../BeginInitiative/BeginInitiative';
@@ -21,7 +21,15 @@ import StepFourteen from "../steps/StepFourteen";
 
 
 const Info = ({ ProposalStep }) => {
+
 	let step = ProposalStep.initiativeStepReducer
+
+	useEffect(() => {
+		getSteps(step)
+	}, [step])
+
+	const [ballotProcess, setBallotProcess] = useState({})
+
 	if (step > 14) {
 		step = 0
 		localStorage.setItem('savedUserStep', 1)
@@ -31,36 +39,37 @@ const Info = ({ ProposalStep }) => {
       return axios.post('https://initiate-co-backend.herokuapp.com/', query({
         operation: 'ballotProcess',
         variables: { id: id },
-        fields: ['id']
+        fields: ['id', 'title', 'dueDate', 'description']
       })).then(
         response => {
-          console.log(response)
+					console.log(response.data.data.ballotProcess)
+					if(ballotProcess !== response.data.data.ballotProcess){
+						setBallotProcess(response.data.data.ballotProcess)
+					}
         }
       ).catch(function (error) {
         console.log(error);
       })
 	}
 
-	getSteps(step)
-
 	return (
 		<section className="info">
 			<div className="steps">
       {step === 0 && <BeginInitiative />}
-			{step === 1 && <StepOne />}
-			{step === 2 && <StepTwo />}
-			{step === 3 && <StepThree />}
-			{step === 4 && <StepFour />}
-			{step === 5 && <StepFive />}
-			{step === 6 && <StepSix />}
-			{step === 7 && <StepSeven />}
-			{step === 8 && <StepEight />}
-			{step === 9 && <StepNine />}
-			{step === 10 && <StepTen />}
-			{step === 11 && <StepEleven />}
-			{step === 12 && <StepTwelve />}
-			{step === 13 && <StepThirteen />}
-			{step === 14 && <StepFourteen />}
+			{step === 1 && <StepOne ballotProcess={ballotProcess}/>}
+			{step === 2 && <StepTwo ballotProcess={ballotProcess}/>}
+			{step === 3 && <StepThree ballotProcess={ballotProcess}/>}
+			{step === 4 && <StepFour ballotProcess={ballotProcess}/>}
+			{step === 5 && <StepFive ballotProcess={ballotProcess}/>}
+			{step === 6 && <StepSix ballotProcess={ballotProcess}/>}
+			{step === 7 && <StepSeven ballotProcess={ballotProcess}/>}
+			{step === 8 && <StepEight ballotProcess={ballotProcess}/>}
+			{step === 9 && <StepNine ballotProcess={ballotProcess}/>}
+			{step === 10 && <StepTen ballotProcess={ballotProcess} />}
+			{step === 11 && <StepEleven ballotProcess={ballotProcess}/>}
+			{step === 12 && <StepTwelve ballotProcess={ballotProcess}/>}
+			{step === 13 && <StepThirteen ballotProcess={ballotProcess}/>}
+			{step === 14 && <StepFourteen ballotProcess={ballotProcess}/>}
 			{step > 14 && { step : 0 } &&<BeginInitiative />}
 			</div>
 		</section>

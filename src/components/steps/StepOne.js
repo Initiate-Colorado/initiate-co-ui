@@ -58,10 +58,11 @@ class StepOne extends Component {
 	};
 
 	render() {
+		console.log(this.props.ballotProcess)
 		return (
 			<section className="step-one">
 				<div className="step-title">
-					<h1>Step {this.state.step}: Submission of a Proposal</h1>
+					<h1>Step {this.props.ballotProcess.id}:{this.props.ballotProcess.title}</h1>
 				</div>
 				<div className="step-text">
 					<p>What do you want to call this initiative?</p>

@@ -1,14 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const StepFourteen = ({ ProposalStep, handleReset, handleDecrementClick }) => {
-	const step = ProposalStep.initiativeStepReducer
-
+const StepFourteen = ({ ballotProcess, handleReset, handleDecrementClick }) => {
 
 	return (
 		<section className="step-fourteen">
 			<div className="step-title">
-				<h1>Step {step}: Placement on Ballot </h1>
+			<h1>Step {ballotProcess.id}:{ballotProcess.title}</h1>
 			</div>
 			<div className={"step-text"}>
 				<p>

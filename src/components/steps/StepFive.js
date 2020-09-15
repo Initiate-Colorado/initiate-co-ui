@@ -52,7 +52,7 @@ class StepFive extends Component {
 
 		<section className="step-five">
 						<div className="step-title">
-			<h1>Step {this.state.step}: Title Setting</h1>
+						<h1>Step {this.props.ballotProcess.id}:{this.props.ballotProcess.title}</h1>
 			</div>
 			<div className={"step-text"}>
 			<p>
