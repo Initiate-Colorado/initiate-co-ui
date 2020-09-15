@@ -1,38 +1,38 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const StepFour = ({ ballotProcess, ProposalStep, handleIncrementClick, handleDecrementClick }) => {
-	const step = ProposalStep.initiativeStepReducer
+const StepFour = ({
+	ballotProcess,
+	ProposalStep,
+	handleIncrementClick,
+	handleDecrementClick,
+}) => {
+	const step = ProposalStep.initiativeStepReducer;
 	return (
 		<section className="step-four">
 			<div className="step-title">
-			<h1>Step {step}: {ballotProcess.title}</h1>
+				<h1>
+					Step {step}: {ballotProcess.title}
+				</h1>
 			</div>
 			<div className={"step-text"}>
-			<p>
-				Following the review and comment process, proponents may submit their
-				proposal to the Secretary of State to begin the process of having a
-				title set. Proponents must submit the following items to the Secretary
-				of State: 
-				<div>
-					(a) the original proposal;
-				</div>
-				<div>
-					(b) the proposal as revised with any revisions highlighted or
-					otherwise indicated, if applicable;
-				</div>
-				<div> and (c)the final language of the proposal.
-				</div> 
-				The proposal is filed with:
+				<p>
+					After the review and comment process, you are on your way to the
+					Secretary of State. This begins the process of creating a title. You
+					must submit the following items: (a) the original proposal; (b) the
+					revised proposal; and ( c ) the final copy of that sweet sweet
+					proposal. The proposal is filed with:
+				</p>
 				<p className="address">
 					Jena Griswold Secretary of State 1700 Broadway, Suite 270 Denver,
 					Colorado 80290 Phone: 303-894-2200, press 3
 				</p>
-				Ballot titles are set on the first and third Wednesdays of each month.
-				To have a proposal considered for title setting, proponents must file
-				their proposal with the Secretary of State by 3:00 p.m. on the 12th day
-				before a meeting.
-			</p>
+				<p>
+					Ballot titles are set on the first and third Wednesdays of each month.
+					To have a proposal considered for title setting, proponents must file
+					their proposal with the Secretary of State by 3:00 p.m. on the 12th
+					day before a meeting.
+				</p>
 			</div>
 			<h3>Last Day for Filing: {ballotProcess.dueDate}</h3>
 			<div className="buttons">
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
-		handleDecrementClick: () => dispatch({ type: "DECREMENT" })
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" }),
 	};
 };
 

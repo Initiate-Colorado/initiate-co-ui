@@ -48,44 +48,44 @@ class StepSix extends Component {
 	render() {
 		return (
 			<section className="step-six">
-							<div className="step-title">
-				<h1>Step {this.props.ballotProcess.id}:{this.props.ballotProcess.title}</h1>
+				<div className="step-title">
+					<h1>
+						Step {this.props.ballotProcess.id}: {this.props.ballotProcess.title}
+					</h1>
 				</div>
 				<div className={"step-text"}>
-				<p>
-					If the Title Board finds that a proposal contains more than one
-					subject, and therefore declines to set a title, the proponents may
-					change the proposal and resubmit it directly to the board for title
-					setting.
-					<textarea
-						type="textarea"
-						placeholder="Paste your proposal revision here"
-						name="revision"
-						value={this.state.ballot.revision}
-						onChange={this.onChange}
-						style={{
-							marginTop: "1em",
-							width: "50vw",
-							height: "20vh",
-							fontFamily: "Roboto, sans-serif",
-						}}
-					/>{" "}
-					<button onClick={this.submitProgress}>Save</button>
-					However, if the change involves more than the removal of language to
-					achieve a single subject or if the board finds the revisions are so
-					substantial that another review and comment meeting is in the public
-					interest, the proposal must be resubmitted to legislative staff for
-					review. In these cases, the steps followed are identical to Steps 1
-					and 2.
-				</p>
+					<p>
+						If the Title Board concludes the proposal contains more than one
+						subject, or a title hasn’t been set for some other reason you can
+						make changes and resubmit it directly to the board for title
+						setting. Be sure to have only one subject or you will be asked to
+						follow Steps 1 and 2 again.
+					</p>
+						<textarea
+							type="textarea"
+							placeholder="Paste your proposal revision here"
+							name="revision"
+							value={this.state.ballot.revision}
+							onChange={this.onChange}
+							style={{
+								marginTop: "1em",
+								width: "50vw",
+								height: "20vh",
+								fontFamily: "Roboto, sans-serif",
+							}}
+						/>{" "}
+						<button onClick={this.submitProgress}>Save</button>
 				</div>
 				<div className="buttons">
-				<button data-testid="research-button" onClick={this.props.handleDecrementClick}>
-					Go Back
-				</button>
-				<button data-testid="research-button" onClick={this.submitNextStep}>
-					Next Step
-				</button>
+					<button
+						data-testid="research-button"
+						onClick={this.props.handleDecrementClick}
+					>
+						Go Back
+					</button>
+					<button data-testid="research-button" onClick={this.submitNextStep}>
+						Next Step
+					</button>
 				</div>
 			</section>
 		);
@@ -101,7 +101,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
-		handleDecrementClick: () => dispatch({ type: "DECREMENT" })
+		handleDecrementClick: () => dispatch({ type: "DECREMENT" }),
 	};
 };
 

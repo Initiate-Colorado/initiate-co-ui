@@ -6,11 +6,12 @@ const StepThirteen = ({
 	handleIncrementClick,
 	handleDecrementClick,
 }) => {
-
 	return (
 		<section className="step-thirteen">
 			<div className="step-title">
-			<h1>Step {ballotProcess.id}:{ballotProcess.title}</h1>
+				<h1>
+					Step {ballotProcess.id}: {ballotProcess.title}
+				</h1>
 			</div>
 			<div className={"step-text"}>
 				<p>

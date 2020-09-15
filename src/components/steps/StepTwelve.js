@@ -6,11 +6,12 @@ const StepTwelve = ({
 	handleIncrementClick,
 	handleDecrementClick,
 }) => {
-
 	return (
 		<section className="step-twelve">
 			<div className="step-title">
-			<h1>Step {ballotProcess.id}:{ballotProcess.title}</h1>
+				<h1>
+					Step {ballotProcess.id}: {ballotProcess.title}
+				</h1>
 			</div>
 			<div className={"step-text"}>
 				<p>
@@ -23,9 +24,7 @@ const StepTwelve = ({
 					addendum.
 				</p>
 			</div>
-			<h3>
-				Last day to cure petition signatures: {ballotProcess.dueDate}
-			</h3>
+			<h3>Last day to cure petition signatures: {ballotProcess.dueDate}</h3>
 			<div className="buttons">
 				<button data-testid="research-button" onClick={handleDecrementClick}>
 					Go Back
