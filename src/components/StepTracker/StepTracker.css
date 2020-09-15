@@ -52,3 +52,14 @@ div .RFS-StepMain {
   font-family: 'Cinzel', serif;
   font-weight: bolder;
 }
+
+@media screen and (max-width: 760px) {
+  .step-tracker {
+    display: none;
+  }
+
+  .begin-initiative {
+    height: 100vh;
+    justify-content: space-evenly;
+  }
+}

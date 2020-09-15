@@ -12,11 +12,8 @@ const WelcomePage = () => {
                 <p>
                     Be guided through the process of proposing a ballot initiative!
                 </p>
-                <NavLink to = {"/proposal"}>
-                    <button
-                        data-testid="proposal-button">
+                <NavLink to = {"/proposal"} style={{ textDecoration: "none", color: 'black' }}>
                             GET STARTED
-                    </button>
                 </NavLink>
             </section>
             <section className="research-start">   
@@ -24,11 +21,8 @@ const WelcomePage = () => {
                 <p>
                     Learn more about initiatives and show your support!
                 </p>    
-                <NavLink to = {"/research"}>
-                    <button
-                        data-testid="research-button">
+                <NavLink to = {"/research"}	style={{ textDecoration: "none", color: 'black' }}>
                             GET STARTED
-                    </button>
                 </NavLink>
             </section>     
             </section>    
