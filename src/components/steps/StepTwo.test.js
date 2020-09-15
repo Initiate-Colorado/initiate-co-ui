@@ -9,6 +9,11 @@ import initiativeStepReducer from '../StepTracker/reducer';
 
 
 describe('StepTwo', () => {
+  const ballotProcess = {
+    id: 2,
+    title: "Review and Comment",
+    dueDate: "April 1"
+  }
 
   let store;
 
@@ -17,13 +22,14 @@ describe('StepTwo', () => {
   })
 
   it('Should render the StepTwo page', () => {
-    const { getByText } = render(
+    const { getAllByText } = render(
     <Provider store = { store }>
       <MemoryRouter>
-        <StepTwo />
+        <StepTwo ballotProcess={ballotProcess}/>
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step : Review and Comment');
-    expect(optionText).toBeInTheDocument();
+    const optionText = getAllByText('Review and Comment', {exact: false});
+    const optionTextTest = optionText[0]
+    expect(optionTextTest).toBeInTheDocument(1);
   });  
 }); 

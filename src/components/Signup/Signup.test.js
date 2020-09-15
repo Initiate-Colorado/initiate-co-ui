@@ -22,7 +22,7 @@ describe('Signup', () => {
         <Signup />
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Signup');
+    const optionText = getByText('SIGN UP', {exact: false});
     expect(optionText).toBeInTheDocument();
   });
 })

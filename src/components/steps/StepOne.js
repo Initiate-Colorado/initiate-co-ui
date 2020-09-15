@@ -161,7 +161,7 @@ class StepOne extends Component {
 					>
 						Go Back
 					</button>
-					<button data-testid="research-button" onClick={this.submitNextStep}>
+					<button data-testid="submit progress button" onClick={this.submitNextStep}>
 						Next Step
 					</button>
 				</div>

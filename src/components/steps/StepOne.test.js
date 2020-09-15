@@ -10,6 +10,12 @@ import initiativeStepReducer from '../StepTracker/reducer';
 
 describe('StepOne', () => {
 
+  const ballotProcess = {
+    id: 1,
+    title: "test title",
+    dueDate: "April 1"
+  }
+
   let store;
 
   beforeEach(() => {
@@ -20,10 +26,10 @@ describe('StepOne', () => {
     const { getByText } = render(
       <Provider store = { store }>
         <MemoryRouter>
-          <StepOne />
+          <StepOne ballotProcess={ballotProcess}/>
         </MemoryRouter>
       </Provider>);
-    const optionText = getByText('Step : Submission of a Proposal');
+    const optionText = getByText('test title', {exact: false});
     expect(optionText).toBeInTheDocument();
   });  
 
@@ -31,7 +37,7 @@ describe('StepOne', () => {
     const { getByPlaceholderText } = render(
       <Provider store = { store }>
         <MemoryRouter>
-          <StepOne />
+        <StepOne ballotProcess={ballotProcess}/>
         </MemoryRouter>
       </Provider>);
     const proposalInput = getByPlaceholderText('Enter the plain text of your proposal here')

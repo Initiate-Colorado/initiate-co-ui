@@ -10,6 +10,12 @@ import initiativeStepReducer from '../StepTracker/reducer';
 
 describe('StepTen', () => {
 
+  const ballotProcess = {
+    id: 10,
+    title: "Submission of Petitions to the Secretary of State",
+    dueDate: "April 1"
+  }
+
   let store;
 
   beforeEach(() => {
@@ -20,10 +26,10 @@ describe('StepTen', () => {
     const { getByText } = render(
     <Provider store = { store }>
       <MemoryRouter>
-        <StepTen />
+        <StepTen  ballotProcess={ballotProcess}/>
       </MemoryRouter>
     </Provider>);
-    const optionText = getByText('Step : Submission of Petitions to the Secretary of State');
+    const optionText = getByText('Submission of Petitions to the Secretary of State', {exact: false});
     expect(optionText).toBeInTheDocument();
   });  
 });  
