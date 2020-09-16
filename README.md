@@ -28,6 +28,8 @@ Initiate Colorado is the final Capstone project for Front End  and Back End Modu
 
 - Implementation of a Progressive Web Application for both mobile and desktop users
 
+- Github Projects to track stories and progress
+
 
 ## Installing / Getting started
 
