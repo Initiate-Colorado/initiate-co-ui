@@ -44,23 +44,28 @@ Clone down this repo and change into the newly created directory:
 git clone https://github.com/Initiate-Colorado/initiate-co-ui.git
 
 cd initiate-co-ui
-
 ```
 Once inside the code base, in order to run tests, type the following command in the terminal:
 
 ```
 npm test
-
 ```
 
 If you would like to view the application in Development mode, run the following command:
 
 ```
 npm run dev
-
 ```
 
 Once successfully compiled, a new window should appear with the url http://localhost:3000/
 
 
 ## In action!
+
+Signing up as a new user:
+
+![login](https://user-images.githubusercontent.com/57731927/93401380-4b68aa00-f83f-11ea-876c-f2707f12abcd.gif)
+
+Initial steps of filing an initiative:
+
+![steps](https://user-images.githubusercontent.com/57731927/93401754-2de81000-f840-11ea-8052-7c79a33d87be.gif)
