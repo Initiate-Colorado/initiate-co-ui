@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Initiate Colorado
 
-## Available Scripts
+Initiate Colorado is the final Capstone project for Front End  and Back End Module 4 students at the Turing School of Software and Design. The idea behind the project was to build an application that allowed a user to walk through the steps of filing an initiative to appear on the ballot for the upcoming election in Colorado. The main goals of this project were to use an agile development process in which our team would set goals and deadlines in order to reach a Minimum Viable Product, implement technologies that have not been explicitly taught at Turing, and develop a "full stack" application in which Back End and Front End teams would have to work together to produce one cohesive application. This repository holds code in which the Front End portion of the application lives.  
 
-In the project directory, you can run:
+## Contributors
 
-### `npm start`
+[Alex Eickelman](https://github.com/Aeickelman40)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Charles Wefso](https://github.com/cwefso)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Danny Ramos](https://github.com/muydanny)
 
-### `npm test`
+[Mariana Cid](https://github.com/Mariana-21)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Michelle Foley](https://github.com/foleymichelle9)
 
-### `npm run build`
+[Rostam Mahabadi](https://github.com/Rostammahabadi)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Front End Technologies Used
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- React Framework
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Redux for global state management
 
-### `npm run eject`
+- Express microservice
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Jest testing library
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Implementation of a Progressive Web Application for both mobile and desktop users
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Github Projects to track stories and progress
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Installing / Getting started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To view the deployed version of our application, go to the following link:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://initiate-co-app.herokuapp.com/
 
-### Code Splitting
+To view this application in development mode and run tests, follow these steps:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+Clone down this repo and change into the newly created directory:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```
+git clone https://github.com/Initiate-Colorado/initiate-co-ui.git
 
-### Making a Progressive Web App
+cd initiate-co-ui
+```
+Once inside the code base, in order to run tests, type the following command in the terminal:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+npm test
+```
 
-### Advanced Configuration
+If you would like to view the application in Development mode, run the following command:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```
+npm run dev
+```
 
-### Deployment
+Once successfully compiled, a new window should appear with the url http://localhost:3000/
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+## In action!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Signing up as a new user:
+
+![login](https://user-images.githubusercontent.com/57731927/93401380-4b68aa00-f83f-11ea-876c-f2707f12abcd.gif)
+
+Initial steps of filing an initiative:
+
+![steps](https://user-images.githubusercontent.com/57731927/93401754-2de81000-f840-11ea-8052-7c79a33d87be.gif)
