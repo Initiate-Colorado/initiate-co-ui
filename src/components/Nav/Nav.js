@@ -11,40 +11,6 @@ const Nav = () => {
 		user = { name: "" };
 	}
 
-	// class Nav extends Component {
-	// 	constructor(props) {
-	// 		super(props);
-	// 		this.state = {
-	// 			loggedIn: false,
-	// 		};
-	// 	}
-
-	// componentDidMount() {
-	// 	const loggedIn = localStorage.getItem("loggedIn");
-	// 	if (loggedIn) {
-	// 		this.setState({
-	// 			loggedIn: loggedIn,
-	// 		})
-	// 	this.setState({
-	// 		loggedIn: false
-	// 	});
-	// 	}
-	// }
-
-	// logOut = (event) => {
-	// 	event.preventDefault();
-	// 	const loggedIn = localStorage.getItem("loggedIn");
-	// 	if (loggedIn) {
-	// 		this.setState({
-	// 			loggedIn: false,
-	// 		});
-	// 	}
-	// 	localStorage.setItem("loggedIn", false);
-	// 	localStorage.setItem("user", {});
-	// 	this.props.handleLogout()
-	// };
-
-	// render() {
 	return (
 		<div className="Nav">
 			<link
@@ -58,22 +24,9 @@ const Nav = () => {
 				{user.name !== "" && (
 					<div className="user-name">Welcome back {user.name}</div>
 				)}
-
-				{/* <div className="signup-login">
-						{this.state.loggedIn === true &&
-							<NavLink
-								to={"/"}
-								style={{ textDecoration: "none" }}
-								onClick={this.logOut}
-							>
-								Logout
-							</NavLink>
-						}
-					</div> */}
 			</header>
 		</div>
 	);
-	// }
 };
 
 export default Nav;

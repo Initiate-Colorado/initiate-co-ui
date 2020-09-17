@@ -7,7 +7,6 @@ describe('step tracker reducer', () => {
   it('should return an initial state for initiativeStepReducer to be 0', () => {
     const expected = 0
     const result = state(undefined, {})
-    console.log(result)
     expect(result).toEqual(expected)
   })
 

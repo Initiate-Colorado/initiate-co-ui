@@ -44,7 +44,6 @@ const Info = ({ ProposalStep }) => {
         fields: ['id', 'title', 'dueDate', 'description']
       })).then(
         response => {
-					console.log(response.data.data.ballotProcess)
 					if(ballotProcess !== response.data.data.ballotProcess){
 						setBallotProcess(response.data.data.ballotProcess)
 					}

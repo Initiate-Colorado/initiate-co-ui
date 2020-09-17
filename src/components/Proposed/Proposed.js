@@ -13,7 +13,6 @@ const Proposed = () => {
       fields: ['id', 'subject', 'description', 'representative', 'title']
     })).then(
       response => {
-        // console.log(response.data.data.ballots)
         }
       ).catch(function (error) {
         console.log(error);
@@ -23,20 +22,11 @@ const Proposed = () => {
   
   getProposedBallots();
 
-//  const officialCards = ballots.map((ballot) => {
-//    return (
-//      <InitiativeCard
-//        {...ballot} key={ballot.id} />
-//      );
-//    });
-//    return <div className="official-cards">{officialCards}</div>;
-//  }; 
 
   return (
       <div className="Proposed">
         <h1>Proposed Initiatives:</h1>
         <InitiativeCard />
-        {/* <h1>{this.state.data}</h1> */}
       </div>
     );
 };   

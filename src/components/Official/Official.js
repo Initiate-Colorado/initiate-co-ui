@@ -17,7 +17,6 @@ const Official = () => {
       fields: ['id', 'subject', 'description', 'representative', 'title', 'representativeAddress', 'corepresentative', 'corepresentativeAddress', 'ballotNumber']
     })).then(
       response => {
-        // console.log(response.data.data.ballots)
         setBallots(response.data.data.ballots)
         }
       ).catch(function (error) {

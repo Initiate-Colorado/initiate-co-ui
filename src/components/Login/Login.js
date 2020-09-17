@@ -26,7 +26,6 @@ class Login extends Component {
 			email: details.email,
 			password: details.password,
 		};
-		console.log(details);
 		return axios
 			.post(
 				"https://initiate-co-backend.herokuapp.com/",
@@ -52,8 +51,6 @@ class Login extends Component {
 				})
 			)
 			.then((response) => {
-				console.log(response.data.data.userLogin.user);
-				console.log(response.data.data.userLogin.token);
 				this.setState({
 					user: {
 						...response.data.data.userLogin.user,
@@ -68,32 +65,6 @@ class Login extends Component {
 				console.log(error);
 			});
 	};
-
-	// updateUser = () => {
-	//   const user = JSON.parse(localStorage.getItem('user'))
-	//   console.log(user)
-	//   const userObject = {
-	//       id: user.id,
-	//       emailL: user.email,
-	//       thirty_days_from: user.thirty_days_from,
-	//       ballotTitle: user.ballotTitle,
-	//       ballotDescriptionTitle: user.ballotDescriptionTitle,
-	//       step: user.step,
-	//       password: user.password
-	//     }
-	//   console.log(userObject)
-	//   return axios.post('https://initiate-co-backend.herokuapp.com/', mutation({
-	//     operation: 'updateUser',
-	//     variables: {user : userObject, auth: user.token},
-	//     fields: ['id', 'email']
-	//   })).then(
-	//     response => {
-	//       console.log(response)
-	//     }
-	//   ).catch(error => {
-	//     console.log(error);
-	//   })
-	// }
 
 	onUpdate = () => {
 		this.updateUser();
